@@ -1,15 +1,17 @@
-import AboutMe from "./Components/About_me.jsx"
-import ContactForm from "./Components/Contact_form.jsx"
+import About from "./Components/About.jsx"
+import Contact from "./Components/Contact.jsx"
 import "./index.css"
+import Home from "./Components/Home.jsx"
 
-function App() {
+export default function App() {
 
   return (
     <>
-      <AboutMe />
-      <ContactForm />
+      <Home />
+      <About />
+      <Contact />
     </>
   )
 }
 
-export default App
+
