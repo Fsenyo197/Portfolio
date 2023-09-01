@@ -4,7 +4,7 @@ export default function About (){
     return (
         <>
             <div className="text-3xl font-bold">
-                <h1>My Portfolio</h1>
+                <h1>About me</h1>
             </div>
         </>
     )
