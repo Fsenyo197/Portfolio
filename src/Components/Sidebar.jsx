@@ -2,30 +2,27 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import logo from "@Images/senyo_logo.png";
 
 export default function Sidebar() {
   return (
-    <nav className="bg-gray-600 p-4 w-32 text-white flex flex-col items-center hidden md:flex">
-      <ul className="list-none justify-center">
-        <li className="flex mb-8">
-          <Link to="/" className="flex items-center">
-            <FontAwesomeIcon
-              icon={faHome}
-              className="mr-2 text-xl items-center"
-            />
-          </Link>
-        </li>
-        <li className="flex mb-8">
-          <Link to="/about">
-            <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact">
-            <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
-          </Link>
-        </li>
-      </ul>
+    <nav className="bg-gray-600 text-white flex flex-col hidden md:flex w-24">
+      <div>
+        <Link to="/">
+          <img src={logo} alt="logo" className="w-50 h-50 mb-24" />
+        </Link>
+      </div>
+      <div className="flex flex-col h-full justify-normal items-center">
+        <Link to="/" className="flex items-center mb-8 p-3 hover:bg-blue-500 ">
+          <FontAwesomeIcon icon={faHome} className="mr-2 text-xl" />
+        </Link>
+        <Link to="/about" className="flex items-center mb-8">
+          <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
+        </Link>
+        <Link to="/contact" className="flex items-center">
+          <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
+        </Link>
+      </div>
     </nav>
   );
 }

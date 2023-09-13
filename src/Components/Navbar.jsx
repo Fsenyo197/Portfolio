@@ -6,7 +6,9 @@ import {
   faUser,
   faEnvelope,
   faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
+import logo from "@Images/senyo_logo.png";
 
 export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -20,38 +22,40 @@ export default function Navbar() {
   };
 
   return (
-    <div className="">
+    <div className="md:hidden">
+      {/* Menu icon button */}
       <button
         onClick={toggleNavbar}
-        className="bg-gray-600 p-4 text-white md:hidden block min-w-full"
+        className="bg-gray-600 py-2 px-4 text-white w-full items-start"
         aria-label="Toggle Navbar"
       >
-        <FontAwesomeIcon icon={faBars} className="text-2xl" />
+        {isNavbarVisible ? (
+          <FontAwesomeIcon icon={faTimes} className="text-2xl px-4" />
+        ) : (
+          <FontAwesomeIcon icon={faBars} className="text-2xl" />
+        )}
       </button>
 
       {isNavbarVisible && (
-        <nav className="bg-gray-600 p-4 w-full text-white md:hidden block">
-          <ul className="list-none flex flex-col items-center">
-            <li className="mb-4">
-              <Link to="/" onClick={closeNavbar}>
-                <FontAwesomeIcon icon={faHome} className="text-xl" />
-                Home
-              </Link>
-            </li>
-            <li className="mb-4">
-              <Link to="/about" onClick={closeNavbar}>
-                <FontAwesomeIcon icon={faUser} className="text-xl" />
-                About
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" onClick={closeNavbar}>
-                <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="fixed top-0 left-0 px-4 bg-gray-600 h-full w-full flex flex-col text-white">
+          <button onClick={closeNavbar}>
+            <FontAwesomeIcon icon={faTimes} className="text-2xl mb-16" />
+          </button>
+          <div>
+            <Link to="/" onClick={closeNavbar} className="mb-8 flex">
+              <FontAwesomeIcon icon={faHome} className="mr-2 text-xl" />
+              Home
+            </Link>
+            <Link to="/about" onClick={closeNavbar} className="mb-8 flex">
+              <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
+              About
+            </Link>
+            <Link to="/contact" onClick={closeNavbar}>
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
+              Contact
+            </Link>
+          </div>
+        </div>
       )}
     </div>
   );
