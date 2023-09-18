@@ -22,19 +22,21 @@ export default function Navbar() {
   };
 
   return (
-    <div className="md:hidden">
-      {/* Menu icon button */}
-      <button
-        onClick={toggleNavbar}
-        className="bg-gray-600 py-2 px-4 text-white w-full items-start"
-        aria-label="Toggle Navbar"
-      >
-        {isNavbarVisible ? (
-          <FontAwesomeIcon icon={faTimes} className="text-2xl px-4" />
-        ) : (
-          <FontAwesomeIcon icon={faBars} className="text-2xl" />
-        )}
-      </button>
+    <div className="md:hidden bg-gray-600 h-16 overflow-y-auto">
+      <div className="flex justify-between">
+        <img src={logo} alt="Logo" className="ml-4 my-2 h-8" />
+        <button
+          onClick={toggleNavbar}
+          className="py-4 px-4 text-white"
+          aria-label="Toggle Navbar"
+        >
+          {isNavbarVisible ? (
+            <FontAwesomeIcon icon={faTimes} className="text-2xl px-4" />
+          ) : (
+            <FontAwesomeIcon icon={faBars} className="text-xl" />
+          )}
+        </button>
+      </div>
 
       {isNavbarVisible && (
         <div className="fixed top-0 left-0 px-4 bg-gray-600 h-full w-full flex flex-col text-white">
