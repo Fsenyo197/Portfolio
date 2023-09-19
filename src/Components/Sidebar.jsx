@@ -13,14 +13,26 @@ export default function Sidebar() {
         </Link>
       </div>
       <div className="flex flex-col h-full justify-normal items-center">
-        <Link to="/" className="flex items-center mb-8 p-3 hover:bg-blue-500 ">
-          <FontAwesomeIcon icon={faHome} className="mr-2 text-xl" />
+        <Link to="/" className="flex items-center mb-8">
+          <FontAwesomeIcon
+            icon={faHome}
+            className="mr-2 text-xl transition duration-100 hover:text-blue-500"
+            title="Home"
+          />
         </Link>
         <Link to="/about" className="flex items-center mb-8">
-          <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
+          <FontAwesomeIcon
+            icon={faUser}
+            className="mr-2 text-xl transition duration-100 hover:text-blue-500"
+            title="About"
+          />
         </Link>
         <Link to="/contact" className="flex items-center">
-          <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="mr-2 text-xl transition duration-100 hover:text-blue-500"
+            title="Contact"
+          />
         </Link>
       </div>
     </nav>

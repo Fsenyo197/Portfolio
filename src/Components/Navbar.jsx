@@ -24,7 +24,9 @@ export default function Navbar() {
   return (
     <div className="md:hidden bg-gray-600 h-16 overflow-y-auto">
       <div className="flex justify-between">
-        <img src={logo} alt="Logo" className="ml-4 my-2 h-8" />
+        <Link to="/">
+          <img src={logo} alt="Logo" className="ml-4 my-2 h-8 w-24" />
+        </Link>
         <button
           onClick={toggleNavbar}
           className="py-4 px-4 text-white"
