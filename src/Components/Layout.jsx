@@ -5,7 +5,7 @@ import Profile from "./Profile";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-true-gray-900 min-h-screen flex">
+    <div className="min-h-screen flex">
       <Sidebar />
       <Profile />
       <div className="flex flex-col flex-1">

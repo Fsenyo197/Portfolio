@@ -1,7 +1,7 @@
 import React from "react";
 import senyo from "@Images/senyo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
