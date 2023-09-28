@@ -7,11 +7,18 @@ import {
   faEnvelope,
   faBars,
   faTimes,
+  faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faTwitter,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 import logo from "@Images/senyo_logo.png";
 
 export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const [isSocialDropdownOpen, setIsSocialDropdownOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
@@ -19,6 +26,10 @@ export default function Navbar() {
 
   const closeNavbar = () => {
     setIsNavbarVisible(false);
+  };
+
+  const toggleSocialDropdown = () => {
+    setIsSocialDropdownOpen(!isSocialDropdownOpen);
   };
 
   return (
@@ -54,10 +65,58 @@ export default function Navbar() {
               <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
               About
             </Link>
-            <Link to="/contact" onClick={closeNavbar}>
+            <Link to="/contact" onClick={closeNavbar} className="mb-8 flex">
               <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
               Contact
             </Link>
+            <div className="mb-4">
+              <button
+                onClick={toggleSocialDropdown}
+                className="mb-2 flex text-left"
+              >
+                <FontAwesomeIcon
+                  icon={faCaretDown}
+                  className={`mr-2 text-3xl ${
+                    isSocialDropdownOpen ? "transform rotate-180" : ""
+                  }`}
+                />
+                Social
+              </button>
+              {isSocialDropdownOpen && (
+                <div className="ml-4">
+                  <a
+                    href="https://github.com/Senyo197"
+                    onClick={closeNavbar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mb-4"
+                  >
+                    <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                    GitHub
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/richard-senyo-gadasu/"
+                    onClick={closeNavbar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mb-4"
+                  >
+                    <FontAwesomeIcon icon={faLinkedinIn} className="mr-2" />
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://twitter.com/RichardSenyo_"
+                    onClick={closeNavbar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <FontAwesomeIcon icon={faTwitter} className="mr-2" />
+                    Twitter
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
