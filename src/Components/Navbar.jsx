@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHome,
-  faUser,
-  faEnvelope,
-  faBars,
-  faTimes,
-  faCaretDown,
-} from "@fortawesome/free-solid-svg-icons";
+  Home as HomeIcon,
+  Person as PersonIcon,
+  Email as EmailIcon,
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  ExpandMore as ExpandMoreIcon,
+} from "@mui/icons-material"; // Import Material-UI icons
 import {
-  faGithub,
-  faTwitter,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+  GitHub as GitHubIcon,
+  Twitter as TwitterIcon,
+  LinkedIn as LinkedInIcon,
+} from "@mui/icons-material"; // Import Material-UI brand icons
 import logo from "@Images/senyo_logo.png";
 
 export default function Navbar() {
@@ -44,9 +43,9 @@ export default function Navbar() {
           aria-label="Toggle Navbar"
         >
           {isNavbarVisible ? (
-            <FontAwesomeIcon icon={faTimes} className="text-2xl px-4" />
+            <CloseIcon className="text-2xl px-4" />
           ) : (
-            <FontAwesomeIcon icon={faBars} className="text-xl" />
+            <MenuIcon className="text-xl" />
           )}
         </button>
       </div>
@@ -54,19 +53,19 @@ export default function Navbar() {
       {isNavbarVisible && (
         <div className="fixed top-0 left-0 px-4 bg-gray-600 h-full w-full flex flex-col text-white">
           <button onClick={closeNavbar}>
-            <FontAwesomeIcon icon={faTimes} className="text-2xl mb-16" />
+            <CloseIcon className="text-2xl mb-16" />
           </button>
           <div>
             <Link to="/" onClick={closeNavbar} className="mb-8 flex">
-              <FontAwesomeIcon icon={faHome} className="mr-2 text-xl" />
+              <HomeIcon className="mr-2 text-xl" />
               Home
             </Link>
             <Link to="/about" onClick={closeNavbar} className="mb-8 flex">
-              <FontAwesomeIcon icon={faUser} className="mr-2 text-xl" />
+              <PersonIcon className="mr-2 text-xl" />
               About
             </Link>
             <Link to="/contact" onClick={closeNavbar} className="mb-8 flex">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-xl" />
+              <EmailIcon className="mr-2 text-xl" />
               Contact
             </Link>
             <div className="mb-4">
@@ -74,8 +73,7 @@ export default function Navbar() {
                 onClick={toggleSocialDropdown}
                 className="mb-2 flex text-left"
               >
-                <FontAwesomeIcon
-                  icon={faCaretDown}
+                <ExpandMoreIcon
                   className={`mr-2 text-3xl ${
                     isSocialDropdownOpen ? "transform rotate-180" : ""
                   }`}
@@ -91,7 +89,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block mb-4"
                   >
-                    <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                    <GitHubIcon className="mr-2" />
                     GitHub
                   </a>
                   <a
@@ -101,7 +99,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block mb-4"
                   >
-                    <FontAwesomeIcon icon={faLinkedinIn} className="mr-2" />
+                    <LinkedInIcon className="mr-2" />
                     LinkedIn
                   </a>
                   <a
@@ -111,7 +109,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <FontAwesomeIcon icon={faTwitter} className="mr-2" />
+                    <TwitterIcon className="mr-2" />
                     Twitter
                   </a>
                 </div>

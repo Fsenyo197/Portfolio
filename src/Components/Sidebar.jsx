@@ -4,9 +4,24 @@ import logo from "@Images/senyo_logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
-import Tooltip from "@mui/material/Tooltip"; // Import Tooltip component
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
-function Sidebar() {
+const LightTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: 'rgba(0, 0, 0, 0.87)',
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+    '& .MuiTooltip-arrow': {
+      color: 'white', // Change the arrow color to white
+    },
+  },
+}));
+
+export default function Sidebar() {
   const [activeIcon, setActiveIcon] = useState(""); // State to track the active icon
 
   const handleIconClick = (iconName) => {
@@ -25,48 +40,49 @@ function Sidebar() {
         </Link>
       </div>
       <div className="flex flex-col h-full justify-normal items-center">
-        <Link to="/" className="flex items-center mb-6">
-          <Tooltip title="Home" placement="right"> {/* Add Tooltip */}
+        <Link to="/" className="flex items-center mb-8">
+          <LightTooltip title="Home" arrow placement="right">
             <HomeIcon
-              className={`mr-2 text-xl p-2 rounded-md ${
+              className={`mr-2 p-1 rounded-md h-9 w-9 ${
                 activeIcon === "home"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
-              }`}
+              } `}
               title="Home"
+              transform="scale(1.5)"
               onClick={() => handleIconClick("home")}
             />
-          </Tooltip>
+          </LightTooltip>
         </Link>
-        <Link to="/about" className="flex items-center mb-6">
-          <Tooltip title="About" placement="right"> {/* Add Tooltip */}
+        <Link to="/about" className="flex items-center mb-8">
+          <LightTooltip title="About" arrow placement="right">
             <PersonIcon
-              className={`mr-2 text-xl p-2 rounded-md ${
+              className={`mr-2 p-1 rounded-md ${
                 activeIcon === "about"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               }`}
               title="About"
+              transform="scale(1.5)"
               onClick={() => handleIconClick("about")}
             />
-          </Tooltip>
+          </LightTooltip>
         </Link>
         <Link to="/contact" className="flex items-center">
-          <Tooltip title="Contact" placement="right"> {/* Add Tooltip */}
+          <LightTooltip title="Contact" placement="right" arrow>
             <EmailIcon
-              className={`mr-2 text-xl p-2 rounded-md ${
+              className={`mr-2 p-1 rounded-md ${
                 activeIcon === "contact"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               }`}
               title="Contact"
+              transform="scale(1.5)"
               onClick={() => handleIconClick("contact")}
             />
-          </Tooltip>
+          </LightTooltip>
         </Link>
       </div>
     </nav>
   );
 }
-
-export default Sidebar;
