@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <Profile />
       <div className="flex flex-col flex-1">
         <Navbar />
-        <main className="flex-grow p-4">{children}</main>
+        <main className="flex-grow p-8">{children}</main>
       </div>
     </div>
   );

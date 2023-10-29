@@ -1,13 +1,13 @@
 import React from "react";
 import "./Components/index.css";
-import Home from "./Components/Home.jsx";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
 import NotFound from "./Components/NotFound";
 import Layout from "./Components/Layout";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import About from "./Components/About";
+import Home from "./Components/Home";
+import Contact from "./Components/Contact";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Layout>
@@ -21,5 +21,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

@@ -4,19 +4,19 @@ import logo from "@Images/senyo_logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.white,
-    color: 'rgba(0, 0, 0, 0.87)',
+    color: "rgba(0, 0, 0, 0.87)",
     boxShadow: theme.shadows[1],
     fontSize: 11,
-    '& .MuiTooltip-arrow': {
-      color: 'white', // Change the arrow color to white
+    "& .MuiTooltip-arrow": {
+      color: "white", // Change the arrow color to white
     },
   },
 }));
@@ -33,7 +33,7 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className="bg-gray-600 text-white flex flex-col hidden md:flex w-24">
+    <nav className="bg-gray-600 text-white flex-col hidden md:flex w-24">
       <div>
         <Link to="/" onClick={handleLogoClick}>
           <img src={logo} alt="logo" className="w-50 h-50 mb-24" />

@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import senyo from "@Images/senyo.jpg";
 import { GitHub, Twitter, LinkedIn } from "@mui/icons-material";
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.white,
-    color: 'rgba(0, 0, 0, 0.87)',
+    color: "rgba(0, 0, 0, 0.87)",
     boxShadow: theme.shadows[1],
     fontSize: 11,
-    '& .MuiTooltip-arrow': {
-      color: 'white',
+    "& .MuiTooltip-arrow": {
+      color: "white",
     },
   },
 }));
@@ -26,11 +26,11 @@ export default function Profile() {
   };
 
   return (
-    <aside className="bg-gray-600 text-white flex flex-col hidden md:flex w-64 border-l items-center">
+    <aside className="bg-gray-600 text-white flex-col hidden md:flex w-64 border-l items-center">
       <div>
         <img
           src={senyo}
-          alt="Image of Senyo"
+          alt="portrait of Senyo"
           className="w-36 h-36 mt-8 mb-8 rounded-full"
         />
       </div>
