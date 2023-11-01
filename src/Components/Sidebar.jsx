@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import logo from "@Images/senyo_logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
@@ -35,12 +35,28 @@ export default function Sidebar() {
   return (
     <nav className="bg-gray-600 text-white flex-col hidden md:flex w-24">
       <div>
-        <Link to="/" onClick={handleLogoClick}>
+        <Link
+          to="top"
+          spy={true}
+          smooth={true}
+          duration={500}
+          onClick={handleLogoClick}
+        >
+          {" "}
+          {/* Use Link from react-scroll */}
           <img src={logo} alt="logo" className="w-50 h-50 mb-24" />
         </Link>
       </div>
       <div className="flex flex-col h-full justify-normal items-center">
-        <Link to="/" className="flex items-center mb-8">
+        <Link
+          to="home"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="flex items-center mb-8"
+        >
+          {" "}
+          {/* Use Link for smooth scrolling */}
           <LightTooltip title="Home" arrow placement="right">
             <HomeIcon
               className={`mr-2 p-1 rounded-md h-9 w-9 ${
@@ -48,13 +64,20 @@ export default function Sidebar() {
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               } `}
-              title="Home"
               transform="scale(1.5)"
               onClick={() => handleIconClick("home")}
             />
           </LightTooltip>
         </Link>
-        <Link to="/about" className="flex items-center mb-8">
+        <Link
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="flex items-center mb-8"
+        >
+          {" "}
+          {/* Use Link for smooth scrolling */}
           <LightTooltip title="About" arrow placement="right">
             <PersonIcon
               className={`mr-2 p-1 rounded-md ${
@@ -62,13 +85,20 @@ export default function Sidebar() {
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               }`}
-              title="About"
               transform="scale(1.5)"
               onClick={() => handleIconClick("about")}
             />
           </LightTooltip>
         </Link>
-        <Link to="/contact" className="flex items-center">
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="flex items-center"
+        >
+          {" "}
+          {/* Use Link for smooth scrolling */}
           <LightTooltip title="Contact" placement="right" arrow>
             <EmailIcon
               className={`mr-2 p-1 rounded-md ${
@@ -76,7 +106,6 @@ export default function Sidebar() {
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               }`}
-              title="Contact"
               transform="scale(1.5)"
               onClick={() => handleIconClick("contact")}
             />
