@@ -6,7 +6,7 @@ import Profile from "./Profile";
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex">
-      <div className="fixed top-0 left-0 h-full flex">
+      <div className="sticky left-0 top-0 h-screen flex">
         <Sidebar />
         <Profile />
       </div>
