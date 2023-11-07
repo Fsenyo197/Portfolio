@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import {
   Home as HomeIcon,
   Person as PersonIcon,
@@ -8,11 +8,7 @@ import {
   Close as CloseIcon,
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material"; // Import Material-UI icons
-import {
-  GitHub as GitHubIcon,
-  Twitter as TwitterIcon,
-  LinkedIn as LinkedInIcon,
-} from "@mui/icons-material"; // Import Material-UI brand icons
+import { GitHub, Twitter, LinkedIn } from "@mui/icons-material"; // Import Material-UI brand icons
 import logo from "@Images/senyo_logo.png";
 
 export default function Navbar() {
@@ -34,7 +30,7 @@ export default function Navbar() {
   return (
     <nav className="md:hidden bg-gray-600 h-16 overflow-y-auto">
       <div className="flex justify-between">
-        <Link to="/">
+        <Link to="top" smooth={true}>
           <img src={logo} alt="Logo" className="ml-4 my-2 h-8 w-24" />
         </Link>
         <button
@@ -56,15 +52,30 @@ export default function Navbar() {
             <CloseIcon className="text-2xl mb-16" />
           </button>
           <div>
-            <Link to="/" onClick={closeNavbar} className="mb-8 flex">
+            <Link
+              to="home"
+              onClick={closeNavbar}
+              className="mb-8 flex"
+              smooth={true}
+            >
               <HomeIcon className="mr-2 text-xl" />
               Home
             </Link>
-            <Link to="/about" onClick={closeNavbar} className="mb-8 flex">
+            <Link
+              to="about"
+              onClick={closeNavbar}
+              className="mb-8 flex"
+              smooth={true}
+            >
               <PersonIcon className="mr-2 text-xl" />
               About
             </Link>
-            <Link to="/contact" onClick={closeNavbar} className="mb-8 flex">
+            <Link
+              to="contact"
+              onClick={closeNavbar}
+              className="mb-8 flex"
+              smooth={true}
+            >
               <EmailIcon className="mr-2 text-xl" />
               Contact
             </Link>
@@ -90,7 +101,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block mb-4"
                   >
-                    <GitHubIcon className="mr-2" />
+                    <GitHub className="mr-2" />
                     GitHub
                   </a>
                   <a
@@ -100,7 +111,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block mb-4"
                   >
-                    <LinkedInIcon className="mr-2" />
+                    <LinkedIn className="mr-2" />
                     LinkedIn
                   </a>
                   <a
@@ -110,7 +121,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <TwitterIcon className="mr-2" />
+                    <Twitter className="mr-2" />
                     Twitter
                   </a>
                 </div>

@@ -6,7 +6,7 @@ import Contact from "./Contact";
 
 const Content = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div>
       {/* The container class sets a max-width and centers the content */}
       <Element name="top" className="mb-8">
         {/* Content for top section */}

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-scroll"; // Import Link from react-scroll
-import logo from "@Images/senyo_logo.png";
+import React, { useState, useEffect } from "react";
+import { Link, Events, scrollSpy } from "react-scroll";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
+import logo from "@Images/senyo_logo.png";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -21,15 +21,27 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-export default function Sidebar() {
-  const [activeIcon, setActiveIcon] = useState(""); // State to track the active icon
+const Sidebar = () => {
+  const [activeIcon, setActiveIcon] = useState("");
 
-  const handleIconClick = (iconName) => {
-    setActiveIcon(iconName);
-  };
+  useEffect(() => {
+    Events.scrollEvent.register("begin", (to, element) => {
+      setActiveIcon(to);
+    });
+
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+    };
+  }, []);
 
   const handleLogoClick = () => {
     setActiveIcon(""); // Clear the active icon when the logo is clicked
+  };
+
+  const handleSetActive = (to) => {
+    setActiveIcon(to);
   };
 
   return (
@@ -42,8 +54,6 @@ export default function Sidebar() {
           duration={500}
           onClick={handleLogoClick}
         >
-          {" "}
-          {/* Use Link from react-scroll */}
           <img src={logo} alt="logo" className="w-50 h-50 mb-24" />
         </Link>
       </div>
@@ -54,18 +64,16 @@ export default function Sidebar() {
           smooth={true}
           duration={500}
           className="flex items-center mb-8"
+          onSetActive={() => handleSetActive("home")}
         >
-          {" "}
-          {/* Use Link for smooth scrolling */}
           <LightTooltip title="Home" arrow placement="right">
             <HomeIcon
               className={`mr-2 p-1 rounded-md h-9 w-9 ${
                 activeIcon === "home"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
-              } `}
+              }`}
               transform="scale(1.5)"
-              onClick={() => handleIconClick("home")}
             />
           </LightTooltip>
         </Link>
@@ -75,9 +83,8 @@ export default function Sidebar() {
           smooth={true}
           duration={500}
           className="flex items-center mb-8"
+          onSetActive={() => handleSetActive("about")}
         >
-          {" "}
-          {/* Use Link for smooth scrolling */}
           <LightTooltip title="About" arrow placement="right">
             <PersonIcon
               className={`mr-2 p-1 rounded-md ${
@@ -86,7 +93,6 @@ export default function Sidebar() {
                   : "hover:text-gray-600 hover:bg-white"
               }`}
               transform="scale(1.5)"
-              onClick={() => handleIconClick("about")}
             />
           </LightTooltip>
         </Link>
@@ -96,9 +102,8 @@ export default function Sidebar() {
           smooth={true}
           duration={500}
           className="flex items-center"
+          onSetActive={() => handleSetActive("contact")}
         >
-          {" "}
-          {/* Use Link for smooth scrolling */}
           <LightTooltip title="Contact" placement="right" arrow>
             <EmailIcon
               className={`mr-2 p-1 rounded-md ${
@@ -107,11 +112,12 @@ export default function Sidebar() {
                   : "hover:text-gray-600 hover:bg-white"
               }`}
               transform="scale(1.5)"
-              onClick={() => handleIconClick("contact")}
             />
           </LightTooltip>
         </Link>
       </div>
     </nav>
   );
-}
+};
+
+export default Sidebar;
