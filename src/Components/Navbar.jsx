@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 import {
   Home as HomeIcon,
-  Person as PersonIcon,
+  Inventory as InventoryIcon,
+  Layers as LayersIcon,
   Email as EmailIcon,
   Menu as MenuIcon,
   Close as CloseIcon,
@@ -49,7 +50,7 @@ export default function Navbar() {
       {isNavbarVisible && (
         <div className="fixed top-0 left-0 px-4 bg-gray-600 h-full w-full flex flex-col text-white">
           <button onClick={closeNavbar}>
-            <CloseIcon className="text-2xl mb-16" />
+            <CloseIcon className="text-2xl mb-24" />
           </button>
           <div>
             <Link
@@ -62,13 +63,22 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              to="about"
+              to="projects"
               onClick={closeNavbar}
               className="mb-8 flex"
               smooth={true}
             >
-              <PersonIcon className="mr-2 text-xl" />
-              About
+              <InventoryIcon className="mr-2 text-lg" />
+              Projects
+            </Link>
+            <Link
+              to="stacks"
+              onClick={closeNavbar}
+              className="mb-8 flex"
+              smooth={true}
+            >
+              <LayersIcon className="mr-2 text-xl" />
+              Stacks
             </Link>
             <Link
               to="contact"
@@ -76,7 +86,7 @@ export default function Navbar() {
               className="mb-8 flex"
               smooth={true}
             >
-              <EmailIcon className="mr-2 text-xl" />
+              <EmailIcon className="mr-2 text-lg" />
               Contact
             </Link>
             <div className="mb-4">

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 import HomeIcon from "@mui/icons-material/Home";
-import PersonIcon from "@mui/icons-material/Person";
+import InventoryIcon from "@mui/icons-material/Inventory";
 import EmailIcon from "@mui/icons-material/Email";
+import LayersIcon from "@mui/icons-material/Layers";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import logo from "@Images/senyo_logo.png";
@@ -54,7 +55,7 @@ const Sidebar = () => {
           duration={500}
           onClick={handleLogoClick}
         >
-          <img src={logo} alt="logo" className="w-50 h-50 mb-24" />
+          <img src={logo} alt="logo" className="w-50 h-16 mt-4 mb-16 " />
         </Link>
       </div>
       <div className="flex flex-col h-full justify-normal items-center">
@@ -78,17 +79,36 @@ const Sidebar = () => {
           </LightTooltip>
         </Link>
         <Link
-          to="about"
+          to="projects"
           spy={true}
           smooth={true}
           duration={500}
           className="flex items-center mb-8"
-          onSetActive={() => handleSetActive("about")}
+          onSetActive={() => handleSetActive("projects")}
         >
-          <LightTooltip title="About" arrow placement="right">
-            <PersonIcon
+          <LightTooltip title="Projects" arrow placement="right">
+            <InventoryIcon
               className={`mr-2 p-1 rounded-md ${
-                activeIcon === "about"
+                activeIcon === "projects"
+                  ? "text-gray-600 bg-white"
+                  : "hover:text-gray-600 hover:bg-white"
+              }`}
+              transform="scale(1.5)"
+            />
+          </LightTooltip>
+        </Link>
+        <Link
+          to="stacks"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="flex items-center mb-8"
+          onSetActive={() => handleSetActive("stacks")}
+        >
+          <LightTooltip title="Stacks" placement="right" arrow>
+            <LayersIcon
+              className={`mr-2 p-1 rounded-md ${
+                activeIcon === "stacks"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
               }`}

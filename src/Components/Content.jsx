@@ -1,8 +1,9 @@
 import React from "react";
 import { Element } from "react-scroll"; // Import Element from react-scroll
 import Home from "./Home";
-import About from "./About";
+import Projects from "./Projects";
 import Contact from "./Contact";
+import Stacks from "./Stacks";
 
 const Content = () => {
   return (
@@ -16,8 +17,11 @@ const Content = () => {
       <Element name="home" className="mb-8">
         <Home />
       </Element>
-      <Element name="about" className="mb-8">
-        <About />
+      <Element name="project" className="mb-8">
+        <Projects />
+      </Element>
+      <Element name="stacks" className="mb-8">
+        <Stacks />
       </Element>
       <Element name="contact">
         <Contact />
