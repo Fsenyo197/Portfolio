@@ -17,7 +17,7 @@ const Content = () => {
       <Element name="home" className="mb-8">
         <Home />
       </Element>
-      <Element name="project" className="mb-8">
+      <Element name="projects" className="mb-8">
         <Projects />
       </Element>
       <Element name="stacks" className="mb-8">

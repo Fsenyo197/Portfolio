@@ -10,7 +10,7 @@ import {
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material"; // Import Material-UI icons
 import { GitHub, Twitter, LinkedIn } from "@mui/icons-material"; // Import Material-UI brand icons
-import logo from "@Images/senyo_logo.png";
+import logo from "@Images/eagle-logo.png";
 
 export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -32,7 +32,11 @@ export default function Navbar() {
     <nav className="md:hidden bg-gray-600 h-16 overflow-y-auto">
       <div className="flex justify-between">
         <Link to="top" smooth={true}>
-          <img src={logo} alt="Logo" className="ml-4 my-2 h-8 w-24" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="ml-4 my-2 h-12 w-12 filter brightness-0 invert"
+          />
         </Link>
         <button
           onClick={toggleNavbar}

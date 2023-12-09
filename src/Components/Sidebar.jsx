@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LayersIcon from "@mui/icons-material/Layers";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
-import logo from "@Images/senyo_logo.png";
+import logo from "@Images/eagle-logo.png";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -55,7 +55,11 @@ const Sidebar = () => {
           duration={500}
           onClick={handleLogoClick}
         >
-          <img src={logo} alt="logo" className="w-50 h-16 mt-4 mb-16 " />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-50 h-16 mt-4 mb-16 filter brightness-0 invert"
+          />
         </Link>
       </div>
       <div className="flex flex-col h-full justify-normal items-center">
