@@ -13,7 +13,7 @@ export default function Layout({ children }) {
       <div className="flex flex-col flex-1">
         {/* Added left margin to accommodate the sidebar width */}
         <Navbar />
-        <main className="flex-grow p-8">{children}</main>
+        <main className="flex-grow p-24">{children}</main>
       </div>
     </div>
   );

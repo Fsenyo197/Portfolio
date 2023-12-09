@@ -34,9 +34,9 @@ export default function Profile() {
           className="w-36 h-36 mt-8 mb-8 rounded-full"
         />
       </div>
-      <strong>Richard Senyo Gadasu</strong>
-      <div>
-        <p>Frontend Software Engineer</p>
+      <div className="p-4">
+        <div className="text-lg font-bold mb-1">Richard Senyo Gadasu</div>
+        <div className="text-gray-300">Frontend Software Engineer</div>
       </div>
       <div className="mt-8 flex justify-between w-32">
         <LightTooltip title="GitHub" arrow placement="bottom">
