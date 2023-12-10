@@ -33,6 +33,7 @@ export default function Stacks() {
   const devops = [
     { name: "Git", link: "https://git-scm.com/" },
     { name: "Docker", link: "https://www.docker.com/" },
+    { name: "Linux", link: "https://www.linux.org/" },
     {
       name: "Shell scripting (Bash)",
       link: "https://www.gnu.org/software/bash/",

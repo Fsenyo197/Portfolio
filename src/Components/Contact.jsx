@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -22,13 +23,33 @@ export default function Contact() {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Subject:", subject);
-    console.log("Message:", message);
+
+    // Add your Email.js service ID, template ID, and user ID
+    const serviceId = "service_ufjfhlc";
+    const templateId = "template_7a26qlr";
+    const userId = "JWm56qt5S9pnaxXTs";
+
+    try {
+      // Send the email using Email.js
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: name,
+          from_email: email,
+          subject: subject,
+          message: message,
+        },
+        userId
+      );
+
+      console.log("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+
     // Reset form fields after submission if needed
     setName("");
     setEmail("");
@@ -42,7 +63,7 @@ export default function Contact() {
         Ready to vibe?
       </div>
       <div className=" text-lg mb-8">Let's make some magic together!</div>
-      <div>
+      <div className="hidden sm:block">
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex">
             {/* Name */}
@@ -110,7 +131,65 @@ export default function Contact() {
             style={{ width: "613px" }}
             className="mt-4 bg-blue-600 text-white p-2 rounded"
           >
-            Send Me an Email
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="sm:hidden">
+        <form onSubmit={handleSubmit} className="mb-4">
+          <div className="flex flex-col">
+            <label htmlFor="name" className="mb-2 text-blue-600 font-bold">
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={handleNameChange}
+              required
+              className="border border-gray-300 p-1 mb-4"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="email" className="mb-2 text-blue-600 font-bold">
+              Your Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+              className="border border-gray-300 p-1 mb-4"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="subject" className="mb-2 text-blue-600 font-bold">
+              Your Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              value={subject}
+              onChange={handleSubjectChange}
+              required
+              className="border border-gray-300 p-1 mb-4"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="message" className="mb-2 text-blue-600 font-bold">
+              Your Message
+            </label>
+            <textarea
+              id="message"
+              value={message}
+              onChange={handleMessageChange}
+              required
+              className="border border-gray-300 p-8 mb-4"
+            />
+          </div>
+          <button type="submit" className="bg-blue-600 text-white p-2 rounded">
+            Submit
           </button>
         </form>
       </div>
