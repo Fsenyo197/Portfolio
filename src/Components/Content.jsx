@@ -9,13 +9,11 @@ import Footer from "./Footer";
 const Content = () => {
   return (
     <div>
-      {/* The container class sets a max-width and centers the content */}
-      <Element name="top" className="mb-8">
-        {/* Content for top section */}
-        <h1 className="text-3xl font-bold">Top Section</h1>
-        {/* Add content for the top section */}
-      </Element>
-      <Element name="home" className="mb-8">
+      <Element name="home" className="mb-16">
+        <h1 className="text-4xl font-bold text-blue-600">Read about me!</h1>
+        <p className="mt-2 mb-16">
+          Just like yesterday, I was curious about the first line of code. Now, poised to impact the world's digital landscape!
+        </p>
         <Home />
       </Element>
       <Element name="projects" className="mb-8">

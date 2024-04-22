@@ -10,10 +10,9 @@ export default function Layout({ children }) {
         <Sidebar />
         <Profile />
       </div>
-      <div className="flex flex-col flex-1">
-        {/* Added left margin to accommodate the sidebar width */}
+      <div className="flex flex-col">
         <Navbar />
-        <main className="flex-grow p-12">{children}</main>
+        <main className=" p-8 md:p-24 text-sm">{children}</main>
       </div>
     </div>
   );

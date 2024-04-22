@@ -65,7 +65,6 @@ export default function Contact() {
       <div className="hidden sm:block">
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex">
-            {/* Name */}
             <div className="flex flex-col mr-4">
               <label htmlFor="name" className="mb-2 text-blue-600 font-bold">
                 Your Name

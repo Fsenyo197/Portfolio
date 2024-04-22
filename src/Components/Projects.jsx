@@ -12,7 +12,7 @@ const Projects = () => {
     groups: [
       {
         id: "work",
-        title: "Featured Work Projects",
+        title: "Featured Projects",
         items: [
           {
             id: "trading-pulse",
@@ -42,7 +42,7 @@ const Projects = () => {
                 >
                   <h3 className="text-blue-600 font-bold text-xl mb-2 mt-8">{item.title}</h3>
                   <img src={item.imgSrc} alt={item.imgAlt} className="h-38 w-60" />
-                  <p className="hover:text-indigo-600">{item.description}</p>
+                  <p className="hover:text-indigo-600 mt-2">{item.description}</p>
                 </a>
               </li>
             ))}

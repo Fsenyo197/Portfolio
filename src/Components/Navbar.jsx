@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import {
   Home as HomeIcon,
@@ -15,6 +15,7 @@ import logo from "@Images/eagle-logo.png";
 export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [isSocialDropdownOpen, setIsSocialDropdownOpen] = useState(false);
+  const navbarRef = useRef(null);
 
   const toggleNavbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
@@ -28,39 +29,51 @@ export default function Navbar() {
     setIsSocialDropdownOpen(!isSocialDropdownOpen);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        closeNavbar();
+      }
+
+    };
+
+    if (isNavbarVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+
+  }, [isNavbarVisible]);
+
   return (
-    <nav className="md:hidden bg-gray-600 h-16 overflow-y-auto">
+    <nav className="md:hidden bg-gray-600 h-20">
       <div className="flex justify-between">
-        <Link to="top" smooth={true}>
+        <Link to="home" smooth={true}>
           <img
             src={logo}
             alt="Logo"
             className="ml-4 my-2 h-12 w-12 filter brightness-0 invert"
           />
         </Link>
+
         <button
           onClick={toggleNavbar}
-          className="py-4 px-4 text-white"
+          className="px-6 text-white"
           aria-label="Toggle Navbar"
         >
-          {isNavbarVisible ? (
-            <CloseIcon className="text-2xl px-4" />
-          ) : (
-            <MenuIcon className="text-xl" />
-          )}
+          {isNavbarVisible ? <CloseIcon className="text-2xl" /> : <MenuIcon className="text-xl" />}
         </button>
       </div>
 
       {isNavbarVisible && (
-        <div className="fixed top-0 left-0 px-4 bg-gray-600 h-full w-full flex flex-col text-white">
-          <button onClick={closeNavbar}>
-            <CloseIcon className="text-2xl mb-24" />
-          </button>
+        <div ref={navbarRef} className="fixed top-20 left-28 px-4 bg-gray-600 h-full w-full flex text-white">
           <div>
             <Link
               to="home"
               onClick={closeNavbar}
-              className="mb-8 flex"
+              className="mb-8 mt-24 flex"
               smooth={true}
             >
               <HomeIcon className="mr-2 text-xl" />
@@ -100,9 +113,8 @@ export default function Navbar() {
                 aria-expanded={isSocialDropdownOpen}
               >
                 <ExpandMoreIcon
-                  className={`mr-2 text-3xl ${
-                    isSocialDropdownOpen ? "transform rotate-180" : ""
-                  }`}
+                  className={`mr-2 text-3xl ${isSocialDropdownOpen ? "transform rotate-180" : ""
+                    }`}
                 />
                 Social
               </button>
