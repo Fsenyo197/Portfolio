@@ -26,13 +26,12 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Add your Email.js service ID, template ID, and user ID
     const serviceId = "service_ufjfhlc";
     const templateId = "template_7a26qlr";
     const userId = "JWm56qt5S9pnaxXTs";
 
     try {
-      // Send the email using Email.js
+      // Send email using Email.js
       await emailjs.send(
         serviceId,
         templateId,

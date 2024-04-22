@@ -16,23 +16,28 @@ export default function Stacks() {
     },
     { name: "CSS3", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
     { name: "Python", link: "https://www.python.org/" },
-    { name: "MySQL", link: "https://www.mysql.com/" },
+    { name: "PHP", link: "https://www.php.net/" },
+    { name: "SQL", link: "https://www.mysql.com/" },
     { name: "Bash", link: "https://www.gnu.org/software/bash/" },
   ];
 
   const frameworks = [
     { name: "React.js", link: "https://reactjs.org/" },
-    { name: "React-scroll", link: "https://github.com/fisshy/react-scroll" },
+    { name: "Node", link: "https://nodejs.org/" },
+    { name: "TypeScript", link: "https://www.typescriptlang.org/" },
+    { name: "Django", link: "https://www.djangoproject.com/" },
+    { name: "Flask", link: "https://flask.palletsprojects.com/" },
+    { name: "PostgreSQL", link: "https://www.postgresql.org/" },
+    { name: "MySQL", link: "https://www.mysql.com/" },
     { name: "Tailwind CSS", link: "https://tailwindcss.com/" },
     { name: "Bootstrap", link: "https://getbootstrap.com/" },
     { name: "Material UI", link: "https://material-ui.com/" },
-    { name: "Styled Component", link: "https://styled-components.com/" },
-    { name: "Vite", link: "https://vitejs.dev/" },
   ];
 
   const devops = [
     { name: "Git", link: "https://git-scm.com/" },
     { name: "Docker", link: "https://www.docker.com/" },
+    { name: "Jenkins", link: "https://www.jenkins.io/" },
     { name: "Linux", link: "https://www.linux.org/" },
     {
       name: "Shell scripting (Bash)",
@@ -51,11 +56,14 @@ export default function Stacks() {
     { name: "VS Code", link: "https://code.visualstudio.com/" },
     { name: "Github", link: "https://github.com/" },
     { name: "Discord", link: "https://discord.com/" },
+    { name: "Heroku", link: "https://www.heroku.com/" },
+    { name: "PythonAnywhere", link: "https://www.pythonanywhere.com/" },
     { name: "Vercel", link: "https://vercel.com/" },
     { name: "Netlify", link: "https://www.netlify.com/" },
     { name: "Google Chrome", link: "https://www.google.com/chrome/" },
     { name: "Wordpress", link: "https://wordpress.org/" },
   ];
+
 
   return (
     <div>
