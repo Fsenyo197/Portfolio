@@ -11,8 +11,11 @@ export default function Home() {
           The 12-months ALX-Africa course helped me understand data strructure and algorythm, database and system management, web achitecture and system design, task automation, creating and consuming API, bugs fixation and the importance of communication and team work.
           I enjoin solving problems and figuring things out is something i consider a "gift". I love being alone but my best mood is when i'm around people talking.
         </p>
-      </div>
-      <div></div>
-    </>
-  );
+
+        <div>
+          From one line of code, poised to contribute greatly to the world's
+          digital landscape!
+        </div>
+      </>
+      );
 }
