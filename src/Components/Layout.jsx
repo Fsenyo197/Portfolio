@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       </div>
       <div className="flex flex-col">
         <Navbar />
-        <main className=" p-8 md:p-24 text-sm">{children}</main>
+        <main className="p-8 md:p-24 text-sm">{children}</main>
       </div>
     </div>
   );

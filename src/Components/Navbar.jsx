@@ -29,12 +29,19 @@ export default function Navbar() {
     setIsSocialDropdownOpen(!isSocialDropdownOpen);
   };
 
+
   useEffect(() => {
+    // Prevent x and y overflow when navbar is expanded
+    if (isNavbarVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = ""; // Revert to default behavior when navbar is closed
+    }
+
     const handleClickOutside = (event) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         closeNavbar();
       }
-
     };
 
     if (isNavbarVisible) {
@@ -43,12 +50,13 @@ export default function Navbar() {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      // Ensure to reset overflow style when component unmounts
+      document.body.style.overflow = "";
     };
-
   }, [isNavbarVisible]);
 
   return (
-    <nav className="md:hidden bg-gray-600 h-20">
+    <nav className="sm:hidden bg-gray-600 h-20">
       <div className="flex justify-between">
         <Link to="home" smooth={true}>
           <img

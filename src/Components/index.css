@@ -6,3 +6,12 @@ body {
     background-color: #cbceda;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.navbar-item {
+    max-width: 576px;
+}
+
+.sidebar-item {
+    min-width: 576px;
+    max-width: 992px;
+}
