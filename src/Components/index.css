@@ -1,3 +1,5 @@
+/* tailwind.css */
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -7,11 +9,41 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.navbar-item {
-    max-width: 576px;
+html {
+    overflow-x: hidden;
 }
 
-.sidebar-item {
-    min-width: 576px;
-    max-width: 992px;
+/* Responsive classes */
+@media (max-width: 640px) {
+
+    /* Styles for small screens (mobile devices) */
+    .resize-main {
+        width: 90%;
+    }
 }
+
+@media (min-width: 640px) {
+
+    /* Styles for medium screens (tablets and larger phones) */
+    .resize-main {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Styles for large screens (desktops) */
+    .resize-main {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* Styles for extra-large screens (large desktops) */
+    .resize-main {
+        width: 50%;
+    }
+}
+
+/* You can add more media queries and adjust styles as needed */

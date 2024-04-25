@@ -8,8 +8,8 @@ import {
   Menu as MenuIcon,
   Close as CloseIcon,
   ExpandMore as ExpandMoreIcon,
-} from "@mui/icons-material"; // Import Material-UI icons
-import { GitHub, Twitter, LinkedIn } from "@mui/icons-material"; // Import Material-UI brand icons
+} from "@mui/icons-material";
+import { GitHub, Twitter, LinkedIn } from "@mui/icons-material";
 import logo from "@Images/eagle-logo.png";
 
 export default function Navbar() {
@@ -31,11 +31,10 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    // Prevent x and y overflow when navbar is expanded
     if (isNavbarVisible) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Revert to default behavior when navbar is closed
+      document.body.style.overflow = "";
     }
 
     const handleClickOutside = (event) => {
@@ -50,7 +49,6 @@ export default function Navbar() {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      // Ensure to reset overflow style when component unmounts
       document.body.style.overflow = "";
     };
   }, [isNavbarVisible]);
