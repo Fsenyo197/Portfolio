@@ -62,7 +62,7 @@ export default function Contact() {
         Ready to vibe?
       </div>
       <div className=" text-lg mb-8">Let's make some magic together!</div>
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex">
             <div className="flex flex-col mr-4">
@@ -133,7 +133,7 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <div className="sm:hidden">
+      <div className="lg:hidden">
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex flex-col">
             <label htmlFor="name" className="mb-2 text-blue-600 font-bold">

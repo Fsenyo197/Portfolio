@@ -6,15 +6,18 @@ import Profile from "./Profile";
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex">
-      <div className="sticky left-0 top-0 h-screen flex">
+      <div className="flex sticky left-0 top-0 h-screen">
         <Sidebar />
         <Profile />
       </div>
-      <div className="flex flex-col">
-        <Navbar />
+      <div className="resize">
+        <div className="flex flex-col">
+          <div className="w-screen">
+            <Navbar />
+          </div>
+          <main className="p-8 md:p-24 text-sm">{children}</main>
+        </div>
       </div>
-      <main className="resize-main p-8 md:p-24 text-sm">{children}</main>
-
     </div>
   );
 }
