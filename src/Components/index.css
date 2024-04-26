@@ -18,7 +18,7 @@ html {
 
     /* Styles for small screens (mobile devices) */
     .resize {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -26,7 +26,7 @@ html {
 
     /* Styles for medium screens (tablets and larger phones) */
     .resize {
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -34,7 +34,7 @@ html {
 
     /* Styles for large screens (desktops) */
     .resize {
-        width: 65%;
+        width: 56%;
     }
 }
 
@@ -46,4 +46,11 @@ html {
     }
 }
 
-/* You can add more media queries and adjust styles as needed */
+.footer {
+    border-bottom: 2px solid black;
+
+    /* Media query for extra-large screens */
+    @media (min-width: 1024px) {
+        width: 563px;
+    }
+}

@@ -6,6 +6,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false); // State to track form submission
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -45,19 +46,29 @@ export default function Contact() {
       );
 
       console.log("Email sent successfully!");
+
+      // Set submitted to true to display success message
+      setSubmitted(true);
+
+      // Reset form fields after submission if needed
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
     } catch (error) {
       console.error("Error sending email:", error);
     }
-
-    // Reset form fields after submission if needed
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
   };
 
   return (
     <>
+      {/* Render success message if form is submitted successfully */}
+      {submitted && (
+        <div className="text-green-600 text-xl font-bold mb-4">
+          Submitted successfully!
+        </div>
+      )}
+
       <div className="text-blue-600 text-3xl font-bold mb-2">
         Ready to vibe?
       </div>
@@ -74,13 +85,12 @@ export default function Contact() {
                 id="name"
                 value={name}
                 onChange={handleNameChange}
-                style={{ width: "300px" }} // Specify the width
+                style={{ width: "275px" }}
                 required
                 className="border border-gray-300 p-2"
               />
             </div>
 
-            {/* Email */}
             <div className="flex flex-col">
               <label htmlFor="email" className="mb-2 text-blue-600 font-bold">
                 Your Email
@@ -90,7 +100,7 @@ export default function Contact() {
                 id="email"
                 value={email}
                 onChange={handleEmailChange}
-                style={{ width: "300px" }} // Specify the width
+                style={{ width: "275px" }}
                 required
                 className="border border-gray-300 p-2"
               />
@@ -105,7 +115,7 @@ export default function Contact() {
               id="subject"
               value={subject}
               onChange={handleSubjectChange}
-              style={{ width: "613px" }} // Specify the width
+              style={{ width: "563px" }}
               required
               className="border border-gray-300 p-2"
             />
@@ -118,7 +128,7 @@ export default function Contact() {
               id="message"
               value={message}
               onChange={handleMessageChange}
-              style={{ width: "613px", height: "150px" }} // Specify the width and height
+              style={{ width: "563px", height: "150px" }} // Specify the width and height
               required
               className="border border-gray-300 p-2"
             />
@@ -126,8 +136,8 @@ export default function Contact() {
 
           <button
             type="submit"
-            style={{ width: "613px" }}
-            className="mt-4 bg-blue-600 text-white p-2 rounded"
+            style={{ width: "563px" }}
+            className="mt-4 bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
           >
             Submit
           </button>
@@ -186,7 +196,7 @@ export default function Contact() {
               className="border border-gray-300 p-8 mb-4"
             />
           </div>
-          <button type="submit" className="bg-blue-600 text-white p-2 rounded">
+          <button type="submit" className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
             Submit
           </button>
         </form>

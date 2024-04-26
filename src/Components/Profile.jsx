@@ -36,7 +36,7 @@ export default function Profile() {
       </div>
       <div className="p-4">
         <div className="text-lg font-bold mb-1">Richard Senyo Gadasu</div>
-        <div className="text-gray-300">Frontend Software Engineer</div>
+        <div className="text-gray-300">Fullstack Software Engineer</div>
       </div>
       <div className="mt-8 flex justify-between w-32">
         <LightTooltip title="GitHub" arrow placement="bottom">
@@ -46,11 +46,10 @@ export default function Profile() {
             rel="noopener noreferrer"
           >
             <GitHub
-              className={`p-1 rounded-md ${
-                activeIcon === "github"
+              className={`p-1 rounded-md ${activeIcon === "github"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
-              }`}
+                }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("github")}
             />
@@ -63,11 +62,10 @@ export default function Profile() {
             rel="noopener noreferrer"
           >
             <Twitter
-              className={`p-1 rounded-md ${
-                activeIcon === "twitter"
+              className={`p-1 rounded-md ${activeIcon === "twitter"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
-              }`}
+                }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("twitter")}
             />
@@ -80,11 +78,10 @@ export default function Profile() {
             rel="noopener noreferrer"
           >
             <LinkedIn
-              className={`p-1 rounded-md ${
-                activeIcon === "linkedin"
+              className={`p-1 rounded-md ${activeIcon === "linkedin"
                   ? "text-gray-600 bg-white"
                   : "hover:text-gray-600 hover:bg-white"
-              }`}
+                }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("linkedin")}
             />

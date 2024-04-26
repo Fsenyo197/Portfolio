@@ -3,9 +3,10 @@ import React from 'react';
 const Footer = () => {
 
     return (
-        <footer className="mt-24 flex justify-center" style={{ borderTop: '2px solid black', width: '38rem' }}>
-            <div>
-                Copyright &copy; {new Date().getFullYear()} Richard Senyo. All rights reserved.
+        <footer className="footer mt-24 flex justify-center items-center">
+            <div className="text-gray-600 text-sm">
+                <span className="mr-2">&copy; {new Date().getFullYear()}</span>
+                <span className="font-semibold">Richard Senyo.</span> All rights reserved.
             </div>
         </footer>
     );
