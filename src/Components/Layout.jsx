@@ -15,7 +15,7 @@ export default function Layout({ children }) {
           <div className="w-screen">
             <Navbar />
           </div>
-          <main className="p-8 lg:p-24 text-sm">{children}</main>
+          <main className="p-8 lg:p-24">{children}</main>
         </div>
       </div>
     </div>

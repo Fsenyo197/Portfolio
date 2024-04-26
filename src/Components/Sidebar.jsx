@@ -58,7 +58,7 @@ const Sidebar = () => {
           <img
             src={logo}
             alt="logo"
-            className="w-16 h-16 ml-2 mb-24 filter brightness-0 invert"
+            className="w-16 h-16 ml-2 mb-30 filter brightness-0 invert"
           />
         </Link>
       </div>
