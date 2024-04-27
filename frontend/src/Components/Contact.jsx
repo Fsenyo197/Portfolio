@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -27,23 +26,19 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceId = "service_ufjfhlc";
-    const templateId = "template_7a26qlr";
-    const userId = "JWm56qt5S9pnaxXTs";
-
     try {
-      // Send email using Email.js
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: name,
-          from_email: email,
-          subject: subject,
-          message: message,
+      await fetch("/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        userId
-      );
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
 
       console.log("Email sent successfully!");
 

@@ -47,8 +47,8 @@ export default function Profile() {
           >
             <GitHub
               className={`p-1 rounded-md ${activeIcon === "github"
-                  ? "text-gray-600 bg-white"
-                  : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-600 bg-white"
+                : "hover:text-gray-600 hover:bg-white"
                 }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("github")}
@@ -63,8 +63,8 @@ export default function Profile() {
           >
             <Twitter
               className={`p-1 rounded-md ${activeIcon === "twitter"
-                  ? "text-gray-600 bg-white"
-                  : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-600 bg-white"
+                : "hover:text-gray-600 hover:bg-white"
                 }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("twitter")}
@@ -79,8 +79,8 @@ export default function Profile() {
           >
             <LinkedIn
               className={`p-1 rounded-md ${activeIcon === "linkedin"
-                  ? "text-gray-600 bg-white"
-                  : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-600 bg-white"
+                : "hover:text-gray-600 hover:bg-white"
                 }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("linkedin")}

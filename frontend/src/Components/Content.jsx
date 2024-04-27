@@ -9,10 +9,10 @@ import Footer from "./Footer";
 const Content = () => {
   return (
     <div>
-      <Element name="home" className="mb-16">
-        <h1 className="text-4xl font-bold text-blue-600">Read about me!</h1>
-        <p className="mt-2 mb-16">
-          Just like yesterday, I was curious about the first line of code. Now, poised to impact the world's digital landscape!
+      <Element name="home">
+        <h1 className="text-4xl font-bold text-blue-600 mb-8">My Story!</h1>
+        <p className="mt-2 mb-8">
+          Just like yesterday, curioused about the first line of code. Now, poised to impact the world's digital landscape!
         </p>
         <Home />
       </Element>
