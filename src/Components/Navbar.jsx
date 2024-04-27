@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
 
       {isNavbarVisible && (
-        <div ref={navbarRef} className="fixed top-20 left-36 px-4 bg-gray-600 h-full w-full flex text-white">
+        <div ref={navbarRef} className="fixed left-36 mt-5 pt-8 px-4 bg-gray-600 h-full w-full flex text-white">
           <div>
             <Link
               to="home"
