@@ -50,6 +50,11 @@ export default function Contact() {
       setEmail("");
       setSubject("");
       setMessage("");
+
+      // Set a timer to hide the success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 10000); // 5000 milliseconds = 5 seconds
     } catch (error) {
       console.error("Error sending email:", error);
     }
@@ -57,13 +62,6 @@ export default function Contact() {
 
   return (
     <>
-      {/* Render success message if form is submitted successfully */}
-      {submitted && (
-        <div className="text-green-600 text-xl font-bold mb-4">
-          Submitted successfully!
-        </div>
-      )}
-
       <div className="text-blue-600 text-3xl font-bold mb-2">
         Ready to vibe?
       </div>
@@ -196,6 +194,14 @@ export default function Contact() {
           </button>
         </form>
       </div>
+
+      {/* Render success message if form is submitted successfully */}
+      {submitted && (
+        <div className="text-green-600 text-lg mb-4">
+          Submitted successfully!
+        </div>
+      )}
+
     </>
   );
 }

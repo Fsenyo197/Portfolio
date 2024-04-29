@@ -22,7 +22,7 @@ app.post("/send-email", async (req, res) => {
     service: 'gmail',
     auth: {
       user: 'psenyo197@gmail.com',
-      pass: '0kx=6}4Dgdk&{XW++3q$L@a5CoB.qWi{]43utRq,z#&xSbXhY9'
+      pass: 'nlly nfvu euar yzpk',
     }
   });
 
