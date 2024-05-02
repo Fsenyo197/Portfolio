@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -27,23 +26,19 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceId = "service_ufjfhlc";
-    const templateId = "template_7a26qlr";
-    const userId = "JWm56qt5S9pnaxXTs";
-
     try {
-      // Send email using Email.js
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: name,
-          from_email: email,
-          subject: subject,
-          message: message,
+      await fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        userId
-      );
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
 
       console.log("Email sent successfully!");
 
@@ -55,6 +50,11 @@ export default function Contact() {
       setEmail("");
       setSubject("");
       setMessage("");
+
+      // Set a timer to hide the success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 10000); // 5000 milliseconds = 5 seconds
     } catch (error) {
       console.error("Error sending email:", error);
     }
@@ -62,13 +62,6 @@ export default function Contact() {
 
   return (
     <>
-      {/* Render success message if form is submitted successfully */}
-      {submitted && (
-        <div className="text-green-600 text-xl font-bold mb-4">
-          Submitted successfully!
-        </div>
-      )}
-
       <div className="text-blue-600 text-3xl font-bold mb-2">
         Ready to vibe?
       </div>
@@ -201,6 +194,14 @@ export default function Contact() {
           </button>
         </form>
       </div>
+
+      {/* Render success message if form is submitted successfully */}
+      {submitted && (
+        <div className="text-green-600 text-lg mb-4">
+          Submitted successfully!
+        </div>
+      )}
+
     </>
   );
 }
