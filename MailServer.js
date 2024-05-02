@@ -51,8 +51,8 @@ router.post("/send-email", async (req, res) => {
   }
 });
 
-// Mounting the router at the specified path
+//Mounting the router at the specified path
 app.use("/.netlify/functions/app", router);
 
-// Export handler for serverless deployment
+//Export handler for serverless deployment
 module.exports.handler = serverless(app);
