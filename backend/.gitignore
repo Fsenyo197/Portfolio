@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Environment variables file
+.env
+
+# IDE/editor specific files
+.vscode/
+
+# Netlify specific files
+.netlify/

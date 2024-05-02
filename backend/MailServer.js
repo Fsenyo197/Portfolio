@@ -1,51 +1,58 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const cors = require("cors"); // Require the cors middleware
+const cors = require("cors");
 
 const app = express();
-app.use(bodyParser.json());
+const router = express.Router();
 
-// Use cors middleware
+// Middleware
+app.use(bodyParser.json());
 app.use(cors({
-  origin: '*', // Allow requests only from http://example.com
+  origin: '*', // Allow requests from any origin (replace '*' with specific origins for better security)
   methods: ['GET', 'POST'], // Allow only GET and POST requests
   allowedHeaders: ['Content-Type'], // Allow only Content-Type header
 }));
-// Define a route to handle form submissions
-app.post("/send-email", async (req, res) => {
-  // Extract form data from the request body
+
+// Default route to check if the app is running
+router.get("/", (req, res) => {
+  res.send("MailServer is running..");
+});
+
+// Route to send an email
+router.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  // Create a Nodemailer transporter
+  // Create a nodemailer transporter
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'psenyo197@gmail.com',
-      pass: 'nlly nfvu euar yzpk',
+      user: 'psenyo197@gmail.com', // Replace with your Gmail email
+      pass: 'nlly nfvu euar yzpk', // Replace with your Gmail password or app-specific password
     }
   });
 
-  // Send email
   try {
+    // Send email
     let info = await transporter.sendMail({
-      from: `"${name}" <${email}>`, // Use user's provided name and email as sender
-      to: "psenyo197@gmail.com",
+      from: `"${name}" <${email}>`,
+      to: "psenyo197@gmail.com", // Destination email
       subject: subject,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
 
     console.log("Message sent: %s", info.messageId);
 
-    res.sendStatus(200);
+    res.sendStatus(200); // Send success response
   } catch (error) {
     console.error("Error sending email:", error);
     res.status(500).send("Error sending email"); // Send error response
   }
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// Mounting the router at the specified path
+app.use("/.netlify/functions/app", router);
+
+// Export handler for serverless deployment
+module.exports.handler = serverless(app);
