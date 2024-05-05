@@ -1,7 +1,7 @@
 [build]
   command = "echo Building Functions"
   base = "/"
-  publish = "Portfolio/public"
+  publish = "Portfolio"
 
 [functions]
   external_node_modules = ["express"]
