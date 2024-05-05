@@ -14,7 +14,7 @@ setupMiddleware(api);
 setupRoutes(router);
 
 // Mounting the router at the specified path
-api.use("/netlify/functions/api", router);
+api.use("/.netlify/functions/api", router);
 
 module.exports = api;
 module.exports.handler = serverless(api);
