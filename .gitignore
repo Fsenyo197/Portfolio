@@ -7,5 +7,3 @@ node_modules/
 # IDE/editor specific files
 .vscode/
 
-# Netlify specific files
-.netlify/
