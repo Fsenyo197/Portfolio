@@ -27,7 +27,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      await fetch("http://https://portfolio-mail-server.netlify.app/", {
+      await fetch("http://https://portfolio-mail-server.netlify.app", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
