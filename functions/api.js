@@ -10,7 +10,7 @@ const router = express.Router();
 // Middleware
 api.use(bodyParser.json());
 api.use(cors({
-  origin: 'https://richard-senyo.netlify.app/', // Specify your frontend domain
+  origin: 'https://richard-senyo.netlify.app'
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
