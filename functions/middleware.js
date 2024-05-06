@@ -5,11 +5,12 @@ const cors = require("cors");
 const setupMiddleware = (api) => {
   api.use(bodyParser.json());
   api.use(cors({
-    origin: 'richard-senyo.netlify.app/', // Specify your frontend domain
+    origin: 'https://richard-senyo.netlify.app', // Remove the trailing slash
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   }));
 };
 
 module.exports = setupMiddleware;
+
 
