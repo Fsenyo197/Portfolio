@@ -9,11 +9,11 @@ const router = express.Router();
 
 // Middleware
 api.use(bodyParser.json());
-api.use(cors({
+//api.use(cors({
   //origin: 'https://richard-senyo.netlify.app'
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+  //methods: ['GET', 'POST'],
+  //allowedHeaders: ['Content-Type'],
+//}));
 
 // Default route to check if the app is running
 router.get("/", (req, res) => {
