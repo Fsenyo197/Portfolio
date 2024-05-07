@@ -1,2 +1,5 @@
 /*
-  Access-Control-Allow-Origin: https://richard-senyo.netlify.app
+  Access-Control-Allow-Origin: https://richard-senyo.netlify.app,
+  Access-Control-Allow-Headers: *,
+  Access-Control-Allow-Methods: OPTIONS,POST,GET,
+  Content-Type: application/json 
