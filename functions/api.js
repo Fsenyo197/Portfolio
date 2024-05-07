@@ -2,18 +2,20 @@ const express = require("express");
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-const cors = require("cors");
 
 const api = express();
 const router = express.Router();
 
 // Middleware
 api.use(bodyParser.json());
-//api.use(cors({
-  //origin: 'https://richard-senyo.netlify.app'
-  //methods: ['GET', 'POST'],
-  //allowedHeaders: ['Content-Type'],
-//}));
+
+// CORS settings
+api.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+  next();
+});
 
 // Default route to check if the app is running
 router.get("/", (req, res) => {
@@ -36,8 +38,6 @@ router.post("/send-email", async (req, res) => {
       auth: {
         user: 'psenyo197@gmail.com', // Replace with your Gmail email
         pass: 'nlly nfvu euar yzpk', // Replace with your Gmail password or app-specific password
-        //user: process.env.EMAIL_USER,
-        //pass: process.env.EMAIL_PASS,
       }
     });
 
