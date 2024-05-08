@@ -32,11 +32,6 @@ router.post("/send-email", async (req, res) => {
     }
   });
 
-  // Basic input validation
-  if (!name || !email || !subject || !message) {
-    return res.status(400).send("All fields are required");
-  }
-
   try {
     // Send email
     let info = await transporter.sendMail({
