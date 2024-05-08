@@ -2,19 +2,18 @@ const express = require("express");
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
 
 const api = express();
 const router = express.Router();
 
 // Middleware
 api.use(bodyParser.json());
-
-// CORS settings
-api.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Access-Control-Request-Method, Access-Control-Request-Headers");
-  next();
-});
+api.use(cors({
+  origin: '*', // Allow requests from any origin (replace '*' with specific origins for better security)
+  methods: ['GET', 'POST'], // Allow only GET and POST requests
+  allowedHeaders: ['Content-Type'], // Allow only Content-Type header
+}));
 
 // Default route to check if the app is running
 router.get("/", (req, res) => {
@@ -25,25 +24,25 @@ router.get("/", (req, res) => {
 router.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
+  // Create a nodemailer transporter
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'psenyo197@gmail.com', // Replace with your Gmail email
+      pass: 'nlly nfvu euar yzpk', // Replace with your Gmail password or app-specific password
+    }
+  });
+
   // Basic input validation
   if (!name || !email || !subject || !message) {
     return res.status(400).send("All fields are required");
   }
 
   try {
-    // Create a nodemailer transporter
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'psenyo197@gmail.com', // Replace with your Gmail email
-        pass: 'nlly nfvu euar yzpk', // Replace with your Gmail password or app-specific password
-      }
-    });
-
     // Send email
     let info = await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: process.env.DESTINATION_EMAIL,
+      to: "psenyo197@gmail.com", // Destination email
       subject: subject,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
@@ -58,7 +57,7 @@ router.post("/send-email", async (req, res) => {
 });
 
 // Mounting the router at the specified path
-api.use("/.netlify/functions/api", router);
+api.use("/.netlify/functions/app", router);
 
 // Export handler for serverless deployment
 module.exports = api;
