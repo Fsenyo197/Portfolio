@@ -10,6 +10,7 @@ const router = express.Router();
 // Middleware
 api.use(bodyParser.json());
 api.use(cors({
+  origin: '*', // Allow requests from any origin (replace '*' with specific origins for better security)
   methods: ['GET', 'POST'], // Allow only GET and POST requests
   allowedHeaders: ['Content-Type'], // Allow only Content-Type header
 }));
