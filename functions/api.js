@@ -10,7 +10,6 @@ const router = express.Router();
 // Middleware
 api.use(bodyParser.json());
 api.use(cors({
-  origin: '*', // Allow requests from any origin (replace '*' with specific origins for better security)
   methods: ['GET', 'POST'], // Allow only GET and POST requests
   allowedHeaders: ['Content-Type'], // Allow only Content-Type header
 }));
@@ -57,7 +56,7 @@ router.post("/send-email", async (req, res) => {
 });
 
 // Mounting the router at the specified path
-api.use("/.netlify/functions/app", router);
+api.use("/.netlify/functions/api", router);
 
 // Export handler for serverless deployment
 module.exports = api;
