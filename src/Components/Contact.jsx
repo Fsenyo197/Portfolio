@@ -5,7 +5,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false); // State to track form submission
+  const [submitted, setSubmitted] = useState(false);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -30,7 +30,7 @@ export default function Contact() {
       await fetch("https://portfolio-mail-server.netlify.app/.netlify/functions/api/send-email/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json; charset=UTF-8",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name,
