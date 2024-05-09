@@ -10,7 +10,6 @@ const router = express.Router();
 // Middleware
 api.use(bodyParser.json());
 api.use(cors({
-  origin: '*', // Allow requests from any origin (replace '*' with specific origins for better security)
   methods: ['GET', 'POST'], // Allow only GET and POST requests
   allowedHeaders: ['Content-Type'], // Allow only Content-Type header
 }));
@@ -29,8 +28,8 @@ router.post("/send-email", async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'psenyo197@gmail.com', // Replace with your Gmail email
-      pass: 'nlly nfvu euar yzpk', // Replace with your Gmail password or app-specific password
+      user: 'psenyo197@gmail.com', 
+      pass: 'nlly nfvu euar yzpk',
     }
   });
 
