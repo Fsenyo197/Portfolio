@@ -21,7 +21,6 @@ router.get("/", (req, res) => {
 
 // Route to send an email
 router.post("/send-email", async (req, res) => {
-  console.log(req.body);
   const { name, email, subject, message } = req.body;
 
   // Create a nodemailer transporter
