@@ -46,7 +46,7 @@ const Sidebar = () => {
   };
 
   return (
-    <nav className="bg-gray-600 text-white justify-center items-center flex-col hidden sm:flex w-24">
+    <nav className="bg-gray-600 text-white flex justify-center items-center flex-col sm:flex w-24">
       <div>
         <Link
           to="home"
