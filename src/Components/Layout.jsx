@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 
-export default function Layout({ children, isNavbarVisible }) {
+export default function Layout({ children}) {
   return (
     <div className="glass min-h-screen flex">
       <div className="flex sticky left-0 top-0 h-screen">
@@ -13,9 +13,9 @@ export default function Layout({ children, isNavbarVisible }) {
       <div className="resize">
         <div className="flex flex-col">
           <div className={`w-screen sticky top-0`}>
-            <Navbar isNavbarVisible={isNavbarVisible} />
+            <Navbar />
           </div>
-          <main className={`p-8 lg:p-24 ${isNavbarVisible ? 'sticky top-0 left-0 right-0' : ''}`}>{children}</main>
+          <main className=p-8 lg:p-24}>{children}</main>
         </div>
       </div>
     </div>
