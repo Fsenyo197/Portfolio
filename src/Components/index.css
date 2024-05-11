@@ -9,9 +9,9 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-html {
+/*html {
     overflow-x: hidden;
-}
+}*/
 
 /* Responsive classes */
 @media (max-width: 640px) {
