@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       </div>
       <div className="resize">
         <div className="flex flex-col">
-          <div className="w-screen">
+          <div className="w-screen sticky top-0">
             <Navbar />
           </div>
           <main className="p-8 lg:p-24">{children}</main>
