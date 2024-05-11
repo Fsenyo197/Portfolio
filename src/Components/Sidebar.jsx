@@ -44,9 +44,8 @@ const Sidebar = () => {
   const handleSetActive = (to) => {
     setActiveIcon(to);
   };
-
   return (
-    <nav className="bg-gray-600 text-white flex justify-center items-center flex-col sm:flex w-24">
+    <nav className="bg-gray-600 text-white flex-col hidden sm:flex w-24">
       <div>
         <Link
           to="home"
