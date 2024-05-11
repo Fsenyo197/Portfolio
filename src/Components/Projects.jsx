@@ -32,7 +32,7 @@ const Projects = () => {
     <div>
       {projectList.groups.map(group => (
         <div key={group.id}>
-          <h2 className="text-blue-600 text-3xl font-bold mb-8 mt-16">{group.title}</h2>
+          <h2 className="text-blue-600 text-3xl font-bold mb-8 mt-16 pt-12">{group.title}</h2>
           <ul>
             {group.items.map(item => (
               <li key={item.id}>

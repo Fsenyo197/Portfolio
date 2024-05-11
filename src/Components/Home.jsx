@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <p className="mb-4">
         Out of curiosity and my love for learning new things, I started learning Python in 2019. My desire for tech skyrocketed when I created and managed a full-fledged blog site using WordPress, even though I had no knowledge of its stacks. So I decided to learn HTML & CSS, and JavaScript in 2021.
       </p>

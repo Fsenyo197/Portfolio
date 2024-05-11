@@ -67,7 +67,7 @@ export default function Stacks() {
 
   return (
     <div>
-      <div className="text-blue-600 text-3xl font-bold mb-2">Bits & Tools</div>
+      <div className="text-blue-600 text-3xl font-bold mb-2 pt-12">Bits & Tools</div>
       <div className="mb-8">The toolkits that drive my coding reality!</div>
       <ul>
         <ul className="list-none">
