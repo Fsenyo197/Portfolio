@@ -54,7 +54,7 @@ export default function Navbar() {
   }, [isNavbarVisible]);
 
   return (
-    <nav className="sm:hidden bg-gray-600 h-20 sticky top-0">
+    <nav className="sm:hidden bg-gray-600 h-20">
       <div className="flex justify-between">
         <Link to="home" smooth={true}>
           <img
