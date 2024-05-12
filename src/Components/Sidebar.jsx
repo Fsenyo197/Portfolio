@@ -48,7 +48,7 @@ const Sidebar = () => {
     <nav className="bg-gray-600 text-white flex-col hidden sm:flex w-24">
       <div>
         <Link
-          to="top"
+          to="home"
           spy={true}
           smooth={true}
           duration={500}

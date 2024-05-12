@@ -5,11 +5,18 @@
 @import 'tailwindcss/utilities';
 
 body {
+    background-image: url('/bg4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*body {
     background-color: #cbceda;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/*html {
+html {
     overflow-x: hidden;
 }*/
 

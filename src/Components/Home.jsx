@@ -3,6 +3,10 @@ import React from "react";
 export default function Home() {
   return (
     <div>
+      <h1 className="text-4xl font-bold text-blue-600 pt-20">My Story!</h1>
+      <p className="mb-8 mt-4">
+        Just like yesterday, curioused about the first line of code. Now, poised to impact the world's digital landscape!
+      </p>
       <p className="mb-4">
         Out of curiosity and my love for learning new things, I started learning Python in 2019. My desire for tech skyrocketed when I created and managed a full-fledged blog site using WordPress, even though I had no knowledge of its stacks. So I decided to learn HTML & CSS, and JavaScript in 2021.
       </p>
