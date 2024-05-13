@@ -22,17 +22,29 @@ export default function Stacks() {
   ];
 
   const frameworks = [
-    { name: "React.js", link: "https://reactjs.org/" },
-    { name: "Node", link: "https://nodejs.org/" },
-    { name: "TypeScript", link: "https://www.typescriptlang.org/" },
+    // Backend
+    { name: "Node.js", link: "https://nodejs.org/" },
+    { name: "Express.js", link: "https://expressjs.com/" },
     { name: "Django", link: "https://www.djangoproject.com/" },
     { name: "Flask", link: "https://flask.palletsprojects.com/" },
+
+    // Database
     { name: "PostgreSQL", link: "https://www.postgresql.org/" },
     { name: "MySQL", link: "https://www.mysql.com/" },
+    { name: "MongoDB", link: "https://www.mongodb.com/" },
+    { name: "Redis", link: "https://redis.io/" },
+
+    // Frontend
+    { name: "React.js", link: "https://reactjs.org/" },
+    { name: "TypeScript", link: "https://www.typescriptlang.org/" },
     { name: "Tailwind CSS", link: "https://tailwindcss.com/" },
     { name: "Bootstrap", link: "https://getbootstrap.com/" },
     { name: "Material UI", link: "https://material-ui.com/" },
+    { name: "react-scroll", link: "https://www.npmjs.com/package/react-scroll" },
+    { name: "Framer Motion", link: "https://www.framer.com/motion/" },
+    { name: "Chart.js", link: "https://www.chartjs.org/" }
   ];
+
 
   const devops = [
     { name: "Git", link: "https://git-scm.com/" },
@@ -67,16 +79,16 @@ export default function Stacks() {
 
   return (
     <div>
-      <div className="text-blue-600 text-3xl font-bold mb-2 pt-12">Bits & Tools</div>
+      <div className="text-gray-900 text-3xl font-bold mb-2 pt-16">Bits & Tools</div>
       <div className="mb-8">The toolkits that drive my coding reality!</div>
       <ul>
         <ul className="list-none">
-          <div className="text-blue-600 font-bold text-xl mb-2">
+          <div className="text-gray-900 font-bold text-xl mb-2">
             Programming Languages
           </div>
           {ProgrammingLanguages.map((language) => (
             <li key={language.name} className="flex items-center mb-2">
-              <span className="mr-2 text-blue-600">✓</span>
+              <span className="mr-2 text-gray-900">✓</span>
               <a
                 href={language.link}
                 target="_blank"
@@ -89,12 +101,12 @@ export default function Stacks() {
           ))}
         </ul>
         <ul>
-          <div className="text-blue-600 font-bold text-xl mb-2 mt-8">
+          <div className="text-gray-900 font-bold text-xl mb-2 mt-8">
             Framework & Libraries
           </div>
           {frameworks.map((framework) => (
             <li key={framework.name} className="flex items-center mb-2">
-              <span className="mr-2 text-blue-600">✓</span>
+              <span className="mr-2 text-gray-900">✓</span>
               <a
                 href={framework.link}
                 target="_blank"
@@ -107,12 +119,12 @@ export default function Stacks() {
           ))}
         </ul>
         <ul>
-          <div className="text-blue-600 font-bold text-xl mb-2 mt-8">
+          <div className="text-gray-900 font-bold text-xl mb-2 mt-8">
             DevOps
           </div>
           {devops.map((devop) => (
             <li key={devop.name} className="flex items-center mb-2">
-              <span className="mr-2 text-blue-600">✓</span>
+              <span className="mr-2 text-gray-900">✓</span>
               <a
                 href={devop.link}
                 target="_blank"
@@ -125,12 +137,12 @@ export default function Stacks() {
           ))}
         </ul>
         <ul>
-          <div className="text-blue-600 font-bold text-xl mb-2 mt-8">
+          <div className="text-gray-900 font-bold text-xl mb-2 mt-8">
             Software & Applications
           </div>
           {softwares.map((software) => (
             <li key={software.name} className="flex items-center mb-2">
-              <span className="mr-2 text-blue-600">✓</span>
+              <span className="mr-2 text-gray-900">✓</span>
               <a
                 href={software.link}
                 target="_blank"

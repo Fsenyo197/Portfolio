@@ -7,12 +7,11 @@ const Projects = () => {
   const projectList = {
     id: "projects-list",
     label: "Projects",
-    title: "From Ideas to Reality",
-    subtitle: "A spectrum of projects: Some solo, some shared, all special.",
     groups: [
       {
         id: "work",
-        title: "Featured Project",
+        title: "Featured Fullstack Projects",
+        subtitle: "From imaginations to Reality ...",
         items: [
           {
             id: "trading-pulse",
@@ -32,7 +31,10 @@ const Projects = () => {
     <div>
       {projectList.groups.map(group => (
         <div key={group.id}>
-          <h2 className="text-blue-600 text-3xl font-bold mb-8 mt-16 pt-12">{group.title}</h2>
+          <h2 className="text-3xl text-gray-900 font-bold mt-16 pt-16">{group.title}</h2>
+          <h3 className="text-black mb-8">
+            {group.subtitle}
+          </h3>
           <ul>
             {group.items.map(item => (
               <li key={item.id}>
@@ -40,7 +42,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h3 className="text-blue-600 font-bold text-xl mb-2 mt-8">{item.title}</h3>
+                  <h3 className="text-gray-900 font-bold text-lg mb-2 mt-8">{item.title}</h3>
                   <img src={item.imgSrc} alt={item.imgAlt} className="h-38 w-60" />
                   <p className="hover:text-indigo-600 mt-2">{item.description}</p>
                 </a>

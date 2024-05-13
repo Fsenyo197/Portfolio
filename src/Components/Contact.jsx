@@ -62,7 +62,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="text-blue-600 text-3xl font-bold mb-2 pt-12">
+      <div className="text-gray-900 text-3xl font-bold mb-2 pt-16">
         Ready to vibe?
       </div>
       <div className=" text-lg mb-8">Let's make some magic together!</div>
@@ -70,7 +70,7 @@ export default function Contact() {
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex">
             <div className="flex flex-col mr-4">
-              <label htmlFor="name" className="mb-2 text-blue-600 font-bold">
+              <label htmlFor="name" className="mb-2 text-gray-900 font-bold">
                 Your Name
               </label>
               <input
@@ -85,7 +85,7 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="email" className="mb-2 text-blue-600 font-bold">
+              <label htmlFor="email" className="mb-2 text-gray-900 font-bold">
                 Your Email
               </label>
               <input
@@ -100,7 +100,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="flex flex-col mr-4 mt-4">
-            <label htmlFor="subject" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="subject" className="mb-2 text-gray-900 font-bold">
               Your Subject
             </label>
             <input
@@ -114,7 +114,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col mr-4 mt-4">
-            <label htmlFor="message" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="message" className="mb-2 text-gray-900 font-bold">
               Your Message
             </label>
             <textarea
@@ -130,7 +130,7 @@ export default function Contact() {
           <button
             type="submit"
             style={{ width: "563px" }}
-            className="mt-4 bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+            className="mt-4 bg-gray-900 text-white p-2 rounded hover:bg-gray-900"
           >
             Submit
           </button>
@@ -139,7 +139,7 @@ export default function Contact() {
       <div className="lg:hidden">
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex flex-col">
-            <label htmlFor="name" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="name" className="mb-2 text-gray-900 font-bold">
               Your Name
             </label>
             <input
@@ -152,7 +152,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="email" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="email" className="mb-2 text-gray-900 font-bold">
               Your Email
             </label>
             <input
@@ -165,7 +165,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="subject" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="subject" className="mb-2 text-gray-900 font-bold">
               Your Subject
             </label>
             <input
@@ -178,7 +178,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="message" className="mb-2 text-blue-600 font-bold">
+            <label htmlFor="message" className="mb-2 text-gray-900 font-bold">
               Your Message
             </label>
             <textarea
@@ -189,7 +189,7 @@ export default function Contact() {
               className="border border-gray-300 p-8 mb-4"
             />
           </div>
-          <button type="submit" className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+          <button type="submit" className="bg-gray-900 text-white p-2 rounded hover:bg-gray-900">
             Submit
           </button>
         </form>

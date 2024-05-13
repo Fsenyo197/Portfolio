@@ -53,7 +53,7 @@ const Content = () => {
           {[...text].map((letter, index) => (
             <motion.span
               key={index}
-              className="text-2xl font-bold text-blue-600 mr-2"
+              className="text-2xl font-bold text-gray-900 mr-1"
               initial={{ opacity: 0, x: -20 }} // Initial animation state for each letter
               animate={{ opacity: 1, x: 0 }} // Animation when letter is visible
               transition={{ duration: 0.5 }} // Animation duration

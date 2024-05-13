@@ -45,7 +45,7 @@ const Sidebar = () => {
     setActiveIcon(to);
   };
   return (
-    <nav className="bg-gray-600 text-white flex-col hidden sm:flex w-24">
+    <nav className="bg-gray-900 text-white flex-col hidden sm:flex w-24">
       <div>
         <Link
           to="home"
@@ -73,8 +73,8 @@ const Sidebar = () => {
           <LightTooltip title="Home" arrow placement="right">
             <HomeIcon
               className={`mr-2 p-1 rounded-md h-9 w-9 ${activeIcon === "home"
-                ? "text-gray-600 bg-white"
-                : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-900 bg-white"
+                : "hover:text-gray-900 hover:bg-white"
                 }`}
               transform="scale(1.5)"
             />
@@ -91,8 +91,8 @@ const Sidebar = () => {
           <LightTooltip title="Projects" arrow placement="right">
             <InventoryIcon
               className={`mr-2 p-1 rounded-md ${activeIcon === "projects"
-                ? "text-gray-600 bg-white"
-                : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-900 bg-white"
+                : "hover:text-gray-900 hover:bg-white"
                 }`}
               transform="scale(1.5)"
             />
@@ -109,8 +109,8 @@ const Sidebar = () => {
           <LightTooltip title="Stacks" placement="right" arrow>
             <LayersIcon
               className={`mr-2 p-1 rounded-md ${activeIcon === "stacks"
-                ? "text-gray-600 bg-white"
-                : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-900 bg-white"
+                : "hover:text-gray-900 hover:bg-white"
                 }`}
               transform="scale(1.5)"
             />
@@ -127,8 +127,8 @@ const Sidebar = () => {
           <LightTooltip title="Contact" placement="right" arrow>
             <EmailIcon
               className={`mr-2 p-1 rounded-md ${activeIcon === "contact"
-                ? "text-gray-600 bg-white"
-                : "hover:text-gray-600 hover:bg-white"
+                ? "text-gray-900 bg-white"
+                : "hover:text-gray-900 hover:bg-white"
                 }`}
               transform="scale(1.5)"
             />

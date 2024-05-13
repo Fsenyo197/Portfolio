@@ -54,7 +54,7 @@ export default function Navbar() {
   }, [isNavbarVisible]);
 
   return (
-    <nav className="sm:hidden bg-gray-600 h-20">
+    <nav className="sm:hidden bg-gray-900 h-20">
       <div className="flex justify-between">
         <Link to="home" smooth={true}>
           <img
@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
 
       {isNavbarVisible && (
-        <div ref={navbarRef} className="sticky left-36 mt-5 pt-8 px-4 bg-gray-600 min-h-screen w-60 flex text-white">
+        <div ref={navbarRef} className="sticky left-36 mt-5 pt-8 px-4 bg-gray-900 min-h-screen w-60 flex text-white">
           <div>
             <Link
               to="home"
