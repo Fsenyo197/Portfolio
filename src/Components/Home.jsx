@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-gray-900 pt-20">My Story!</h1>
+      <h1 className="text-4xl font-bold text-gray-900 pt-24">My Story!</h1>
       <p className="mb-8 mt-4">
         Just like yesterday, curioused about the first line of code. Now, poised to impact the world's digital landscape!
       </p>
@@ -19,7 +19,7 @@ export default function Home() {
       <p className="mb-4">
         This intensive training not only honed my technical skills but also taught me the importance of perseverance and dedication in achieving goals. It was a transformative experience that prepared me for the challenges of real-world software development.
       </p>
-      <p className="mb-4">
+      <p>
         I enjoy solving problems and figuring things out, which is something I consider a "gift". I love being alone, but my best mood is when I'm around people talking.
       </p>
     </div>

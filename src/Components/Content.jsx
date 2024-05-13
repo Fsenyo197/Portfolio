@@ -8,17 +8,19 @@ import Stacks from "./Stacks";
 import Footer from "./Footer";
 
 const Content = () => {
-  const [text, setText] = useState("");
+  const [words, setWords] = useState([]);
   const [imageWidth, setImageWidth] = useState("w-64"); // Initial width for larger screens
 
   useEffect(() => {
     const originalText = "Hola, meet Richard Senyo Gadasu!";
+    const wordsArray = originalText.split(" ");
+
     let currentIndex = 0;
 
     const interval = setInterval(() => {
-      setText(originalText.slice(0, currentIndex));
-      currentIndex = (currentIndex + 1) % (originalText.length + 1);
-    }, 250); // Adjust the speed of animation here (in milliseconds)
+      setWords(wordsArray.slice(0, currentIndex));
+      currentIndex = (currentIndex + 1) % (wordsArray.length + 1);
+    }, 650); // Adjust the speed of animation here (in milliseconds)
 
     // Adjust image width based on screen size
     const handleResize = () => {
@@ -48,17 +50,17 @@ const Content = () => {
           className="ml-4 flex flex-wrap"
           initial={{ opacity: 0 }} // Initial animation state
           animate={{ opacity: 1 }} // Animation when component is mounted
-          transition={{ duration: 1 }} // Animation duration
+          transition={{ duration: 2 }} // Animation duration
         >
-          {[...text].map((letter, index) => (
+          {words.map((word, index) => (
             <motion.span
               key={index}
-              className="text-2xl font-bold text-gray-900 mr-1"
-              initial={{ opacity: 0, x: -20 }} // Initial animation state for each letter
-              animate={{ opacity: 1, x: 0 }} // Animation when letter is visible
-              transition={{ duration: 0.5 }} // Animation duration
+              className="text-2xl font-bold text-gray-900 mr-4"
+              initial={{ opacity: 0, x: -20 }} // Initial animation state for each word
+              animate={{ opacity: 1, x: 0 }} // Animation when word is visible
+              transition={{ duration: 2 }} // Animation duration
             >
-              {letter}
+              {word}
             </motion.span>
           ))}
         </motion.div>
@@ -67,10 +69,10 @@ const Content = () => {
       <Element name="home">
         <Home />
       </Element>
-      <Element name="projects" className="mb-8">
+      <Element name="projects">
         <Projects />
       </Element>
-      <Element name="stacks" className="mb-8">
+      <Element name="stacks">
         <Stacks />
       </Element>
       <Element name="contact">

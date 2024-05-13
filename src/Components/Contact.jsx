@@ -62,7 +62,7 @@ export default function Contact() {
 
   return (
     <>
-      <div className="text-gray-900 text-3xl font-bold mb-2 pt-16">
+      <div className="text-gray-900 text-3xl font-bold mb-2 pt-20">
         Ready to vibe?
       </div>
       <div className=" text-lg mb-8">Let's make some magic together!</div>
