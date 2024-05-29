@@ -15,7 +15,7 @@ export default function Layout({ children }) {
           <div className="w-screen sticky top-0">
             <Navbar />
           </div>
-          <main className="p-8 pt-2 lg:p-24 lg:pt-12">{children}</main>
+          <main className="p-8 lg:p-24 lg:pt-12">{children}</main>
         </div>
       </div>
     </div>

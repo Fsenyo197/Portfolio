@@ -1,9 +1,8 @@
 import React from "react";
 import tradingPulseImage from "@Images/trading-pulse.png";
-import portfolioImage from "@Images/portfolio.png"; // Import the image for the Portfolio project
+import portfolioImage from "@Images/portfolio.png";
 
 const Projects = () => {
-
   const projectList = {
     id: "projects-list",
     label: "Projects",
@@ -20,8 +19,8 @@ const Projects = () => {
             imgAlt: "Screenshot of the Trading Pulse website",
             title: "Trading Pulse",
             description:
-              "A simple yet powerful tool, that empowers traders of all levels to make informed decisions by providing positive, negative, and neutral analyses of key economic factors.  Our in-depth analysis helps you understand the potential impact on various markets, from forex and stocks to commodities and cryptocurrencies. By leveraging this knowledge, you can  improve your win rate and navigate the complexities of financial markets with confidence.",
-            stacks: ["React,", "TailwindCSS,", "Django,", "MySQL",],
+              "A simple yet powerful tool, that empowers traders of all levels to make informed decisions by providing positive, negative, and neutral analyses of key economic factors. Our in-depth analysis helps you understand the potential impact on various markets, from forex and stocks to commodities and cryptocurrencies. By leveraging this knowledge, you can improve your win rate and navigate the complexities of financial markets with confidence.",
+            stacks: ["React", "TailwindCSS", "Django", "MySQL"],
           },
           {
             id: "portfolio",
@@ -31,7 +30,7 @@ const Projects = () => {
             title: "Portfolio",
             description:
               "My personal portfolio website. In addition with a serverless backend for transporting the messages from the contact form directly to my email.",
-            stacks: ["React,", "TailwindCSS,", "Node.js,", "ExpressJs"],
+            stacks: ["React", "TailwindCSS", "Node.js", "ExpressJs"],
           },
         ],
       },
@@ -39,34 +38,33 @@ const Projects = () => {
   };
 
   return (
-    <div>
+    <div className="container p-4 sm:p-6 lg:p-20">
       {projectList.groups.map(group => (
-        <div key={group.id}>
-          <h2 className="text-3xl text-gray-900 font-bold pt-20">{group.title}</h2>
+        <div key={group.id} className="mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-bold mb-4">{group.title}</h2>
           <h3 className="text-gray-900 mb-8">
             {group.subtitle}
           </h3>
-          <ul>
+          <div className="grid grid-cols-1 gap-10">
             {group.items.map(item => (
-              <li key={item.id}>
+              <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden transition transform hover:scale-105">
                 <a href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="block"
                 >
-                  <h3 className="text-gray-900 font-bold text-lg mb-2 mt-4">{item.title}</h3>
-                  <img src={item.imgSrc} alt={item.imgAlt} className="h-38 w-60" />
-                  <div>
-                    <ul className="italic text-sm flex">
-                      {item.stacks.map(stack => (
-                        <li className="mr-1" key={stack}>{stack}</li>
-                      ))}
-                    </ul>
+                  <img src={item.imgSrc} alt={item.imgAlt} className="w-full h-48 object-cover sm:h-64 lg:h-48" />
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-gray-900 font-bold text-lg sm:text-xl mb-2">{item.title}</h3>
+                    <div className="text-sm text-gray-500 mb-4">
+                      {item.stacks.join(', ')}
+                    </div>
+                    <p className="text-gray-900 text-sm sm:text-base">{item.description}</p>
                   </div>
-                  <p className="hover:text-indigo-600 mt-2">{item.description}</p>
                 </a>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ))}
     </div>

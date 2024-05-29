@@ -68,3 +68,41 @@ html {
     backdrop-filter: blur(3px);
     /* Adjust blur as needed */
 }
+
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-in {
+    animation: slideIn 1s ease-in-out;
+}
