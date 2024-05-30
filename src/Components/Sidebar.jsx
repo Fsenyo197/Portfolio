@@ -38,7 +38,7 @@ const Sidebar = () => {
   }, []);
 
   const handleLogoClick = () => {
-    setActiveIcon(""); // Clear the active icon when the logo is clicked
+    setActiveIcon("");
   };
 
   const handleSetActive = (to) => {
@@ -48,7 +48,7 @@ const Sidebar = () => {
     <nav className="bg-gray-900 text-white flex-col hidden sm:flex w-24">
       <div>
         <Link
-          to="home"
+          to="top"
           spy={true}
           smooth={true}
           duration={500}

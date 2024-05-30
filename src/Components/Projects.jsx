@@ -38,28 +38,36 @@ const Projects = () => {
   };
 
   return (
-    <div className="container p-4 sm:p-6 lg:p-20">
-      {projectList.groups.map(group => (
+    <div className="container mx-auto p-4 sm:p-8 md:p-20 pt-36">
+      {projectList.groups.map((group) => (
         <div key={group.id} className="mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-900 font-bold mb-4">{group.title}</h2>
-          <h3 className="text-gray-900 mb-8">
-            {group.subtitle}
-          </h3>
+          <h2 className="text-4xl text-gray-900 font-bold mb-4">{group.title}</h2>
+          <h3 className="text-gray-700 mb-8">{group.subtitle}</h3>
           <div className="grid grid-cols-1 gap-10">
-            {group.items.map(item => (
-              <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden transition transform hover:scale-105">
-                <a href={item.url}
+            {group.items.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white shadow-sm rounded-lg overflow-hidden transition transform hover:scale-105 z-10"
+              >
+                <a
+                  href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <img src={item.imgSrc} alt={item.imgAlt} className="w-full h-48 object-cover sm:h-64 lg:h-48" />
-                  <div className="p-4 sm:p-6">
-                    <h3 className="text-gray-900 font-bold text-lg sm:text-xl mb-2">{item.title}</h3>
+                  <img
+                    src={item.imgSrc}
+                    alt={item.imgAlt}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-gray-900 font-bold text-xl mb-2">
+                      {item.title}
+                    </h3>
                     <div className="text-sm text-gray-500 mb-4">
-                      {item.stacks.join(', ')}
+                      {item.stacks.join(", ")}
                     </div>
-                    <p className="text-gray-900 text-sm sm:text-base">{item.description}</p>
+                    <p className="text-gray-700">{item.description}</p>
                   </div>
                 </a>
               </div>
