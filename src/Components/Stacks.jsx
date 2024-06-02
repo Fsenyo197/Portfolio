@@ -76,7 +76,7 @@ export default function Stacks() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-12">
+    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-14">
       <div className="w-full max-w-4xl">
         <div className="text-gray-900 text-3xl font-bold mb-2">Pack of Stacks</div>
         <div className="mb-8 text-sm italic">The pack that drives my coding reality!</div>
