@@ -60,7 +60,7 @@ const Content = () => {
             </div>
           </div>
         </div>
-        <p className="text-navy-900 text-base mb-6 text-center sm:text-left">
+        <p className="text-navy-900 text-sm italic mb-6 text-center sm:text-left">
           Yesterday, curioused about the first line of code. Today, poised to impact the world's digital landscape!
         </p>
       </Element>

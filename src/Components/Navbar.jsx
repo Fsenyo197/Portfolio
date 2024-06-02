@@ -29,7 +29,6 @@ export default function Navbar() {
     setIsSocialDropdownOpen(!isSocialDropdownOpen);
   };
 
-
   useEffect(() => {
     if (isNavbarVisible) {
       document.body.style.overflow = "hidden";
@@ -54,7 +53,7 @@ export default function Navbar() {
   }, [isNavbarVisible]);
 
   return (
-    <nav className="sm:hidden sticky top-0 bg-gray-900 h-20 z-50">
+    <nav className="sm:hidden sticky top-0 bg-gray-900 h-20">
       <div className="flex justify-between">
         <Link to="top" smooth={true}>
           <img
@@ -119,8 +118,7 @@ export default function Navbar() {
                 aria-expanded={isSocialDropdownOpen}
               >
                 <ExpandMoreIcon
-                  className={`mr-2 text-3xl ${isSocialDropdownOpen ? "transform rotate-180" : ""
-                    }`}
+                  className={`mr-2 text-3xl ${isSocialDropdownOpen ? "transform rotate-180" : ""}`}
                 />
                 Social
               </button>

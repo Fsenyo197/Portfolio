@@ -61,84 +61,14 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <div className="text-gray-900 text-3xl font-bold mb-2 pt-20">
-        Ready to vibe?
-      </div>
-      <div className=" text-lg mb-8">Let's make some magic together!</div>
-      <div className="hidden lg:block">
+    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-6">
+      <div className="w-full max-w-lg">
+        <div className="text-gray-900 text-3xl font-bold mb-2">
+          Ready to vibe?
+        </div>
+        <div className="text-lg mb-8">Let's make some magic together!</div>
         <form onSubmit={handleSubmit} className="mb-4">
-          <div className="flex">
-            <div className="flex flex-col mr-4">
-              <label htmlFor="name" className="mb-2 text-gray-900 font-bold">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={handleNameChange}
-                style={{ width: "275px" }}
-                required
-                className="border border-gray-300 p-2"
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="email" className="mb-2 text-gray-900 font-bold">
-                Your Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={handleEmailChange}
-                style={{ width: "275px" }}
-                required
-                className="border border-gray-300 p-2"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col mr-4 mt-4">
-            <label htmlFor="subject" className="mb-2 text-gray-900 font-bold">
-              Your Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              value={subject}
-              onChange={handleSubjectChange}
-              style={{ width: "563px" }}
-              required
-              className="border border-gray-300 p-2"
-            />
-          </div>
-          <div className="flex flex-col mr-4 mt-4">
-            <label htmlFor="message" className="mb-2 text-gray-900 font-bold">
-              Your Message
-            </label>
-            <textarea
-              id="message"
-              value={message}
-              onChange={handleMessageChange}
-              style={{ width: "563px", height: "150px" }} // Specify the width and height
-              required
-              className="border border-gray-300 p-2"
-            />
-          </div>
-
-          <button
-            type="submit"
-            style={{ width: "563px" }}
-            className="mt-4 bg-gray-900 text-white p-2 rounded hover:bg-gray-900"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-      <div className="lg:hidden">
-        <form onSubmit={handleSubmit} className="mb-4">
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label htmlFor="name" className="mb-2 text-gray-900 font-bold">
               Your Name
             </label>
@@ -148,10 +78,10 @@ export default function Contact() {
               value={name}
               onChange={handleNameChange}
               required
-              className="border border-gray-300 p-1 mb-4"
+              className="border border-gray-300 p-2"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label htmlFor="email" className="mb-2 text-gray-900 font-bold">
               Your Email
             </label>
@@ -161,10 +91,10 @@ export default function Contact() {
               value={email}
               onChange={handleEmailChange}
               required
-              className="border border-gray-300 p-1 mb-4"
+              className="border border-gray-300 p-2"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label htmlFor="subject" className="mb-2 text-gray-900 font-bold">
               Your Subject
             </label>
@@ -174,10 +104,10 @@ export default function Contact() {
               value={subject}
               onChange={handleSubjectChange}
               required
-              className="border border-gray-300 p-1 mb-4"
+              className="border border-gray-300 p-2"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4">
             <label htmlFor="message" className="mb-2 text-gray-900 font-bold">
               Your Message
             </label>
@@ -186,22 +116,19 @@ export default function Contact() {
               value={message}
               onChange={handleMessageChange}
               required
-              className="border border-gray-300 p-8 mb-4"
+              className="border border-gray-300 p-2 h-40"
             />
           </div>
-          <button type="submit" className="bg-gray-900 text-white p-2 rounded hover:bg-gray-900">
+          <button type="submit" className="bg-gray-900 text-white p-2 rounded hover:bg-gray-700">
             Submit
           </button>
         </form>
+        {submitted && (
+          <div className="text-green-600 text-lg mb-4">
+            Submitted successfully!
+          </div>
+        )}
       </div>
-
-      {/* Render success message if form is submitted successfully */}
-      {submitted && (
-        <div className="text-green-600 text-lg mb-4">
-          Submitted successfully!
-        </div>
-      )}
-
-    </>
+    </div>
   );
 }

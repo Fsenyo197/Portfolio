@@ -1,4 +1,5 @@
 import React from "react";
+import { Grid, Typography } from "@mui/material";
 import tradingPulseImage from "@Images/trading-pulse.png";
 import portfolioImage from "@Images/portfolio.png";
 
@@ -21,6 +22,7 @@ const Projects = () => {
             description:
               "A simple yet powerful tool, that empowers traders of all levels to make informed decisions by providing positive, negative, and neutral analyses of key economic factors. Our in-depth analysis helps you understand the potential impact on various markets, from forex and stocks to commodities and cryptocurrencies. By leveraging this knowledge, you can improve your win rate and navigate the complexities of financial markets with confidence.",
             stacks: ["React", "TailwindCSS", "Django", "MySQL"],
+            borderColor: "#3b82f6", // Blue border for Trading Pulse
           },
           {
             id: "portfolio",
@@ -31,6 +33,7 @@ const Projects = () => {
             description:
               "My personal portfolio website. In addition with a serverless backend for transporting the messages from the contact form directly to my email.",
             stacks: ["React", "TailwindCSS", "Node.js", "ExpressJs"],
+            borderColor: "#10b981", // Green border for Portfolio
           },
         ],
       },
@@ -38,41 +41,38 @@ const Projects = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 sm:p-8 md:p-20 pt-36">
+    <div id="projects" className="container mx-auto p-4 sm:p-4 md:p-16 mt-20">
       {projectList.groups.map((group) => (
         <div key={group.id} className="mb-12">
-          <h2 className="text-4xl text-gray-900 font-bold mb-4">{group.title}</h2>
-          <h3 className="text-gray-700 mb-8">{group.subtitle}</h3>
-          <div className="grid grid-cols-1 gap-10">
-            {group.items.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white shadow-sm rounded-lg overflow-hidden transition transform hover:scale-105 z-10"
-              >
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <img
-                    src={item.imgSrc}
-                    alt={item.imgAlt}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-gray-900 font-bold text-xl mb-2">
-                      {item.title}
-                    </h3>
-                    <div className="text-sm text-gray-500 mb-4">
-                      {item.stacks.join(", ")}
-                    </div>
-                    <p className="text-gray-700">{item.description}</p>
-                  </div>
-                </a>
-              </div>
-            ))}
+          <div className="text-gray-900 text-3xl font-bold mb-2">
+            {group.title}
           </div>
+          <div className="mb-8 text-sm italic">
+            {group.subtitle}
+          </div>
+          <Grid container spacing={4}>
+            {group.items.map((item) => (
+              <Grid item key={item.id}>
+                <div
+                  className="project-item p-4 text-gray-900 rounded-lg shadow-lg bg-white"
+                  style={{ border: `4px solid ${item.borderColor}` }}
+                >
+                  <img src={item.imgSrc} alt={item.imgAlt} className="w-full h-40 object-cover rounded-t-lg" />
+                  <div className="project-content mt-4">
+                    <Typography variant="h5" component="h3" className="text-gray-900">
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      {item.stacks.join(", ")}
+                    </Typography>
+                    <Typography variant="body2" component="p" className="mt-2">
+                      {item.description}
+                    </Typography>
+                  </div>
+                </div>
+              </Grid>
+            ))}
+          </Grid>
         </div>
       ))}
     </div>
