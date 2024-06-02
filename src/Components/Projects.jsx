@@ -41,7 +41,7 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="container mx-auto p-4 sm:p-8 md:p-20 mt-20">
+    <div id="projects" className="container mx-auto p-4 sm:pt-4 sm:p-8 md:p-20 mt-20">
       {projectList.groups.map((group) => (
         <div key={group.id} className="mb-12">
           <div className="text-gray-900 text-3xl font-bold mb-2">

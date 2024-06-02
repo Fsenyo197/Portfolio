@@ -61,7 +61,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-4">
+    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-4 sm:pt-4">
       <div className="w-full max-w-lg">
         <div className="text-gray-900 text-3xl font-bold mb-2">
           Ready to vibe?
