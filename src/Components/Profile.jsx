@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import senyo from "@Images/senyo.jpg";
-import { GitHub, Twitter, LinkedIn } from "@mui/icons-material";
+import { GitHub, Twitter, LinkedIn, Description } from "@mui/icons-material";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 
@@ -88,14 +88,14 @@ export default function Profile() {
           </a>
         </LightTooltip>
       </div>
-      <div className="mt-8">
+      <div className="mt-8 md:block hidden">
         <a
-          href="/Richard_Senyo_Gadasu.pdf"
+          href="/Richard-Senyo-Gadasu.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:underline"
+          className="text-white hover:underline flex items-center"
         >
-          Download CV
+          <Description className="mr-2" /> Download CV
         </a>
       </div>
     </aside>
