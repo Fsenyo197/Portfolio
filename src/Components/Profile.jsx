@@ -3,6 +3,7 @@ import senyo from "@Images/senyo.jpg";
 import { GitHub, Twitter, LinkedIn, Description } from "@mui/icons-material";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -15,6 +16,15 @@ const LightTooltip = styled(({ className, ...props }) => (
     "& .MuiTooltip-arrow": {
       color: "white",
     },
+  },
+}));
+
+const CustomButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.palette.common.white,
+  color: theme.palette.text.primary,
+  '&:hover': {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
   },
 }));
 
@@ -88,15 +98,23 @@ export default function Profile() {
           </a>
         </LightTooltip>
       </div>
+      <div className="flex flex-wrap mt-8 font-medium text-sm p-2 text-gray-300">
+        <p>
+          Curious and passionate Fullstack Software Engineer with a solid foundation in JavaScript, C, Python, PHP, HTML,
+          and CSS. Thriving in Agile and DevOps environments, I am dedicated to creating reliable solutions that streamline
+          software engineering processes. Proficient in leveraging modern frameworks, libraries, and tools to craft userfriendly interfaces and fast, efficient products.
+        </p>
+      </div>
       <div className="mt-8 md:block hidden">
-        <a
+        <CustomButton
+          variant="contained"
+          startIcon={<Description />}
           href="/Richard-Senyo-Gadasu.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:underline flex items-center"
         >
-          <Description className="mr-2" /> Download CV
-        </a>
+          Download CV
+        </CustomButton>
       </div>
     </aside>
   );

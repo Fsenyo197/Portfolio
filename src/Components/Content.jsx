@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Element } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
+import Button from "@mui/material/Button";
+import Description from "@mui/icons-material/Description";
 
 import Home from "./Home";
 import Projects from "./Projects";
@@ -63,6 +65,32 @@ const Content = () => {
         <p className="text-navy-900 text-sm italic mb-6 text-center sm:text-left">
           Yesterday, curioused about the first line of code. Today, poised to impact the world's digital landscape!
         </p>
+        <div className="flex justify-center mb-6 md:hidden">
+          <Button
+            variant="contained"
+            startIcon={<Description />}
+            href="/Richard-Senyo-Gadasu.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: 'white',
+              color: 'black',
+              fontWeight: 'bold',
+              textTransform: 'none',
+              border: '1px solid black',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'black';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'white';
+              e.currentTarget.style.color = 'black';
+            }}
+          >
+            Download CV
+          </Button>
+        </div>
       </Element>
       <Element name="home">
         <Home />
