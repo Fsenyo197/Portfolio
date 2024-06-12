@@ -88,6 +88,16 @@ export default function Profile() {
           </a>
         </LightTooltip>
       </div>
+      <div className="mt-8">
+        <a
+          href="/Richard_Senyo_Gadasu.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:underline"
+        >
+          Download CV
+        </a>
+      </div>
     </aside>
   );
 }
