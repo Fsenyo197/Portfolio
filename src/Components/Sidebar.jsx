@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LayersIcon from "@mui/icons-material/Layers";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
-import logo from "@Images/eagle-logo.png";
+import logo from "@Images/logo1.png";
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -57,7 +57,7 @@ const Sidebar = () => {
           <img
             src={logo}
             alt="logo"
-            className="w-16 h-16 ml-2 mb-36 filter brightness-0 invert"
+            className="w-16 h-16 mt-4 ml-2 mb-36 filter brightness-0 invert"
           />
         </Link>
       </div>
@@ -72,10 +72,11 @@ const Sidebar = () => {
         >
           <LightTooltip title="Home" arrow placement="right">
             <HomeIcon
-              className={`mr-2 p-1 rounded-md h-9 w-9 ${activeIcon === "home"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`mr-2 p-1 rounded-md h-9 w-9 ${
+                activeIcon === "home"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
             />
           </LightTooltip>
@@ -90,10 +91,11 @@ const Sidebar = () => {
         >
           <LightTooltip title="Projects" arrow placement="right">
             <InventoryIcon
-              className={`mr-2 p-1 rounded-md ${activeIcon === "projects"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`mr-2 p-1 rounded-md ${
+                activeIcon === "projects"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
             />
           </LightTooltip>
@@ -108,10 +110,11 @@ const Sidebar = () => {
         >
           <LightTooltip title="Stacks" placement="right" arrow>
             <LayersIcon
-              className={`mr-2 p-1 rounded-md ${activeIcon === "stacks"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`mr-2 p-1 rounded-md ${
+                activeIcon === "stacks"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
             />
           </LightTooltip>
@@ -126,10 +129,11 @@ const Sidebar = () => {
         >
           <LightTooltip title="Contact" placement="right" arrow>
             <EmailIcon
-              className={`mr-2 p-1 rounded-md ${activeIcon === "contact"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`mr-2 p-1 rounded-md ${
+                activeIcon === "contact"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
             />
           </LightTooltip>

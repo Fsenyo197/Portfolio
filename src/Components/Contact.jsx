@@ -27,18 +27,21 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      await fetch("https://portfolio-mail-server.netlify.app/.netlify/functions/api/send-email/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          subject,
-          message,
-        }),
-      });
+      await fetch(
+        "https://portfolio-mail-server.netlify.app/.netlify/functions/api/send-email/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            subject,
+            message,
+          }),
+        }
+      );
 
       console.log("Email sent successfully!");
 
@@ -61,7 +64,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-4 sm:pt-4">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:pt-4">
       <div className="w-full max-w-lg">
         <div className="text-gray-900 text-3xl font-bold mb-2">
           Ready to vibe?
@@ -119,7 +122,10 @@ export default function Contact() {
               className="border border-gray-300 p-2 h-40"
             />
           </div>
-          <button type="submit" className="bg-gray-900 text-white p-2 rounded hover:bg-gray-700">
+          <button
+            type="submit"
+            className="bg-gray-900 text-white p-2 rounded hover:bg-gray-700"
+          >
             Submit
           </button>
         </form>

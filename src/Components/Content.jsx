@@ -35,7 +35,7 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="bg-whitish-blue min-h-screen p-6">
+    <div className=" bg-gray-50 min-h-screen p-6">
       <Element name="top">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-12 pt-16">
           <div className="text-gray-900 mb-8 text-4xl font-extrabold text-center sm:text-left">
@@ -63,7 +63,8 @@ const Content = () => {
           </div>
         </div>
         <p className="text-navy-900 text-sm italic mb-6 text-center sm:text-left">
-          Yesterday, curioused about the first line of code. Today, poised to impact the world's digital landscape!
+          Yesterday, curioused about the first line of code. Today, poised to
+          impact the world's digital landscape!
         </p>
         <div className="flex justify-center mb-6 md:hidden">
           <Button
@@ -73,19 +74,19 @@ const Content = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              backgroundColor: 'white',
-              color: 'black',
-              fontWeight: 'bold',
-              textTransform: 'none',
-              border: '1px solid black',
+              backgroundColor: "white",
+              color: "black",
+              fontWeight: "bold",
+              textTransform: "none",
+              border: "1px solid black",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'black';
-              e.currentTarget.style.color = 'white';
+              e.currentTarget.style.backgroundColor = "black";
+              e.currentTarget.style.color = "white";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'white';
-              e.currentTarget.style.color = 'black';
+              e.currentTarget.style.backgroundColor = "white";
+              e.currentTarget.style.color = "black";
             }}
           >
             Download CV

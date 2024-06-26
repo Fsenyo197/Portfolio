@@ -40,9 +40,12 @@ export default function Stacks() {
     { name: "Tailwind CSS", link: "https://tailwindcss.com/" },
     { name: "Bootstrap", link: "https://getbootstrap.com/" },
     { name: "Material UI", link: "https://material-ui.com/" },
-    { name: "react-scroll", link: "https://www.npmjs.com/package/react-scroll" },
+    {
+      name: "react-scroll",
+      link: "https://www.npmjs.com/package/react-scroll",
+    },
     { name: "Framer Motion", link: "https://www.framer.com/motion/" },
-    { name: "Chart.js", link: "https://www.chartjs.org/" }
+    { name: "Chart.js", link: "https://www.chartjs.org/" },
   ];
 
   const devops = [
@@ -76,10 +79,14 @@ export default function Stacks() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-whitish-blue p-12">
+    <div className="min-h-screen flex items-center justify-center p-12">
       <div className="w-full max-w-4xl">
-        <div className="text-gray-900 text-3xl font-bold mb-2">Pack of Stacks</div>
-        <div className="mb-8 text-sm italic">The pack that drives my coding reality!</div>
+        <div className="text-gray-900 text-3xl font-bold mb-2">
+          Pack of Stacks
+        </div>
+        <div className="mb-8 text-sm italic">
+          The pack that drives my coding reality!
+        </div>
         <ul>
           <ul className="list-none mb-8">
             <div className="text-gray-900 font-bold text-xl mb-2">
@@ -118,9 +125,7 @@ export default function Stacks() {
             ))}
           </ul>
           <ul className="list-none mb-8">
-            <div className="text-gray-900 font-bold text-xl mb-2">
-              DevOps
-            </div>
+            <div className="text-gray-900 font-bold text-xl mb-2">DevOps</div>
             {devops.map((devop) => (
               <li key={devop.name} className="flex items-center mb-2">
                 <span className="mr-2 text-gray-900">✓</span>

@@ -1,14 +1,14 @@
 /* tailwind.css */
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
-    background-image: url('/bg4.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /*body {
@@ -22,87 +22,83 @@ html {
 
 /* Responsive classes */
 @media (max-width: 640px) {
-
-    /* Styles for small screens (mobile devices) */
-    .resize {
-        width: 100%;
-    }
+  /* Styles for small screens (mobile devices) */
+  .resize {
+    width: 100%;
+  }
 }
 
 @media (min-width: 640px) {
-
-    /* Styles for medium screens (tablets and larger phones) */
-    .resize {
-        width: 90%;
-    }
+  /* Styles for medium screens (tablets and larger phones) */
+  .resize {
+    width: 90%;
+  }
 }
 
 @media (min-width: 768px) {
-
-    /* Styles for large screens (desktops) */
-    .resize {
-        width: 56%;
-    }
+  /* Styles for large screens (desktops) */
+  .resize {
+    width: 56%;
+  }
 }
 
 @media (min-width: 1024px) {
-
-    /* Styles for extra-large screens (large desktops) */
-    .resize {
-        width: 70%;
-    }
+  /* Styles for extra-large screens (large desktops) */
+  .resize {
+    width: 70%;
+  }
 }
 
 .footer {
-    border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
 
-    /* Media query for extra-large screens */
-    @media (min-width: 1024px) {
-        width: 563px;
-    }
+  /* Media query for extra-large screens */
+  @media (min-width: 1024px) {
+    width: 563px;
+  }
 }
 
 .glass {
-    background: rgba(255, 255, 255, 0.6);
-    /* White with 60% opacity */
-    backdrop-filter: blur(3px);
-    /* Adjust blur as needed */
+  background: rgba(255, 255, 255, 0.6);
+  /* White with 60% opacity */
+  backdrop-filter: blur(3px);
+  /* Adjust blur as needed */
 }
 
 .transition {
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .hover\:scale-105:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {
-    animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .animate-slide-in {
-    animation: slideIn 1s ease-in-out;
+  animation: slideIn 1s ease-in-out;
 }

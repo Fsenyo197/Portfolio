@@ -10,7 +10,7 @@ import {
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
 import { GitHub, Twitter, LinkedIn } from "@mui/icons-material";
-import logo from "@Images/eagle-logo.png";
+import logo from "@Images/logo1.png";
 
 export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -68,12 +68,19 @@ export default function Navbar() {
           className="px-6 text-white"
           aria-label="Toggle Navbar"
         >
-          {isNavbarVisible ? <CloseIcon className="text-2xl" /> : <MenuIcon className="text-xl" />}
+          {isNavbarVisible ? (
+            <CloseIcon className="text-2xl" />
+          ) : (
+            <MenuIcon className="text-xl" />
+          )}
         </button>
       </div>
 
       {isNavbarVisible && (
-        <div ref={navbarRef} className="sticky left-36 mt-5 pt-8 px-4 bg-gray-900 min-h-screen w-60 flex text-white">
+        <div
+          ref={navbarRef}
+          className="sticky left-36 mt-5 pt-8 px-4 bg-gray-900 min-h-screen w-60 flex text-white"
+        >
           <div>
             <Link
               to="home"
@@ -118,7 +125,9 @@ export default function Navbar() {
                 aria-expanded={isSocialDropdownOpen}
               >
                 <ExpandMoreIcon
-                  className={`mr-2 text-3xl ${isSocialDropdownOpen ? "transform rotate-180" : ""}`}
+                  className={`mr-2 text-3xl ${
+                    isSocialDropdownOpen ? "transform rotate-180" : ""
+                  }`}
                 />
                 Social
               </button>
