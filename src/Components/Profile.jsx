@@ -22,7 +22,7 @@ const LightTooltip = styled(({ className, ...props }) => (
 const CustomButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
   color: theme.palette.text.primary,
-  '&:hover': {
+  "&:hover": {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
   },
@@ -56,10 +56,11 @@ export default function Profile() {
             rel="noopener noreferrer"
           >
             <GitHub
-              className={`p-1 rounded-md ${activeIcon === "github"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`p-1 rounded-md ${
+                activeIcon === "github"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("github")}
             />
@@ -67,15 +68,16 @@ export default function Profile() {
         </LightTooltip>
         <LightTooltip title="X/Twitter" arrow placement="bottom">
           <a
-            href="https://twitter.com/RichardSenyo_"
+            href="https://twitter.com/Senyo197"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Twitter
-              className={`p-1 rounded-md ${activeIcon === "twitter"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`p-1 rounded-md ${
+                activeIcon === "twitter"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("twitter")}
             />
@@ -88,10 +90,11 @@ export default function Profile() {
             rel="noopener noreferrer"
           >
             <LinkedIn
-              className={`p-1 rounded-md ${activeIcon === "linkedin"
-                ? "text-gray-900 bg-white"
-                : "hover:text-gray-900 hover:bg-white"
-                }`}
+              className={`p-1 rounded-md ${
+                activeIcon === "linkedin"
+                  ? "text-gray-900 bg-white"
+                  : "hover:text-gray-900 hover:bg-white"
+              }`}
               transform="scale(1.5)"
               onClick={() => handleIconClick("linkedin")}
             />
@@ -100,9 +103,12 @@ export default function Profile() {
       </div>
       <div className="flex flex-wrap mt-8 font-medium text-sm p-2 text-gray-300">
         <p>
-          Curious and passionate Fullstack Software Engineer with a solid foundation in JavaScript, C, Python, PHP, HTML,
-          and CSS. Thriving in Agile and DevOps environments, I am dedicated to creating reliable solutions that streamline
-          software engineering processes. Proficient in leveraging modern frameworks, libraries, and tools to craft userfriendly interfaces and fast, efficient products.
+          Curious and passionate Fullstack Software Engineer with a solid
+          foundation in JavaScript, C, Python, PHP, HTML, and CSS. Thriving in
+          Agile and DevOps environments, I am dedicated to creating reliable
+          solutions that streamline software engineering processes. Proficient
+          in leveraging modern frameworks, libraries, and tools to craft
+          userfriendly interfaces and fast, efficient products.
         </p>
       </div>
       <div className="mt-8 md:block hidden">

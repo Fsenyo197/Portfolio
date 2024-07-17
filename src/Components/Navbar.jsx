@@ -154,7 +154,7 @@ export default function Navbar() {
                     LinkedIn
                   </a>
                   <a
-                    href="https://twitter.com/RichardSenyo_"
+                    href="https://twitter.com/Senyo197"
                     onClick={closeNavbar}
                     target="_blank"
                     rel="noopener noreferrer"
