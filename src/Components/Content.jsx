@@ -11,22 +11,19 @@ import Stacks from "./Stacks";
 import Footer from "./Footer";
 
 const Content = () => {
-  const [imageWidth, setImageWidth] = useState("w-64"); // Initial width for larger screens
+  const [imageWidth, setImageWidth] = useState("w-64");
 
   useEffect(() => {
-    // Adjust image width based on screen size
     const handleResize = () => {
       if (window.innerWidth <= 640) {
-        setImageWidth("w-32"); // Smaller size for small screens
+        setImageWidth("w-32");
       } else {
-        setImageWidth("w-60"); // Larger size for larger screens
+        setImageWidth("w-60");
       }
     };
 
-    // Initial call to handleResize
     handleResize();
 
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -35,64 +32,67 @@ const Content = () => {
   }, []);
 
   return (
-    <div className=" bg-gray-50 min-h-screen p-6">
+    <div className="min-h-screen p-6">
       <Element name="top">
-        <div className="flex flex-col sm:flex-row items-center justify-between mb-12 pt-16">
-          <div className="text-gray-900 mb-8 text-4xl font-extrabold text-center sm:text-left">
-            <span className="block mb-2 pt-8">Hello, I&apos;m </span>
-            <TypeAnimation
-              sequence={[
-                "Richard Senyo!",
-                1000,
-                "a Fullstack Software Engineer!",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </div>
-          <div className="flex-shrink-0 sm:ml-16">
-            <div className="rounded-full bg-navy-700 p-2 static">
-              <img
-                src="/contactpic.png"
-                alt="hero image"
-                className={`${imageWidth} rounded-full`}
+        <div className="bg-gray-900 p-8 rounded-lg">
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-12 pt-16">
+            <div className="text-white mb-8 text-4xl font-extrabold text-center sm:text-left">
+              <span className="block mb-2 pt-8">Hello, I&apos;m </span>
+              <TypeAnimation
+                sequence={[
+                  "Richard Senyo!",
+                  1000,
+                  "a Fullstack Software Engineer!",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
               />
             </div>
+            <div className="flex-shrink-0 sm:ml-16">
+              <div className="rounded-full bg-white p-2 static">
+                <img
+                  src="/contactpic.png"
+                  alt="hero image"
+                  className={`${imageWidth} rounded-full`}
+                />
+              </div>
+            </div>
+          </div>
+          <p className="text-white text-sm italic mb-6 text-center sm:text-left">
+            Yesterday, curioused about the first line of code. Today, poised to
+            impact the world's digital landscape!
+          </p>
+          <div className="flex justify-center mb-6 md:hidden">
+            <Button
+              variant="contained"
+              startIcon={<Description />}
+              href="/Richard-Senyo-Gadasu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                fontWeight: "bold",
+                textTransform: "none",
+                border: "1px solid black",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "black";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              Download CV
+            </Button>
           </div>
         </div>
-        <p className="text-navy-900 text-sm italic mb-6 text-center sm:text-left">
-          Yesterday, curioused about the first line of code. Today, poised to
-          impact the world's digital landscape!
-        </p>
-        <div className="flex justify-center mb-6 md:hidden">
-          <Button
-            variant="contained"
-            startIcon={<Description />}
-            href="/Richard-Senyo-Gadasu.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: "white",
-              color: "black",
-              fontWeight: "bold",
-              textTransform: "none",
-              border: "1px solid black",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "black";
-              e.currentTarget.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-              e.currentTarget.style.color = "black";
-            }}
-          >
-            Download CV
-          </Button>
-        </div>
       </Element>
+      <br />
       <Element name="home">
         <Home />
       </Element>
@@ -102,6 +102,7 @@ const Content = () => {
       <Element name="stacks">
         <Stacks />
       </Element>
+      <br />
       <Element name="contact">
         <Contact />
       </Element>

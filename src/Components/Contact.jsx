@@ -45,34 +45,31 @@ export default function Contact() {
 
       console.log("Email sent successfully!");
 
-      // Set submitted to true to display success message
       setSubmitted(true);
 
-      // Reset form fields after submission if needed
       setName("");
       setEmail("");
       setSubject("");
       setMessage("");
 
-      // Set a timer to hide the success message after 5 seconds
       setTimeout(() => {
         setSubmitted(false);
-      }, 10000); // 5000 milliseconds = 5 seconds
+      }, 10000);
     } catch (error) {
       console.error("Error sending email:", error);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 sm:pt-4">
+    <div className="min-h-screen flex items-center justify-center p-4 sm:pt-4 bg-gray-900 rounded-lg">
       <div className="w-full max-w-lg">
-        <div className="text-gray-900 text-3xl font-bold mb-2">
-          Ready to vibe?
+        <div className="text-white text-3xl font-bold mb-2">Ready to vibe?</div>
+        <div className="text-lg text-white mb-8">
+          Let's make some magic together!
         </div>
-        <div className="text-lg mb-8">Let's make some magic together!</div>
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex flex-col mb-4">
-            <label htmlFor="name" className="mb-2 text-gray-900 font-bold">
+            <label htmlFor="name" className="mb-2 text-white font-bold">
               Your Name
             </label>
             <input
@@ -81,11 +78,11 @@ export default function Contact() {
               value={name}
               onChange={handleNameChange}
               required
-              className="border border-gray-300 p-2"
+              className="border p-2"
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="mb-2 text-gray-900 font-bold">
+            <label htmlFor="email" className="mb-2 text-white font-bold">
               Your Email
             </label>
             <input
@@ -94,11 +91,11 @@ export default function Contact() {
               value={email}
               onChange={handleEmailChange}
               required
-              className="border border-gray-300 p-2"
+              className="border p-2"
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="subject" className="mb-2 text-gray-900 font-bold">
+            <label htmlFor="subject" className="mb-2 text-white font-bold">
               Your Subject
             </label>
             <input
@@ -107,11 +104,11 @@ export default function Contact() {
               value={subject}
               onChange={handleSubjectChange}
               required
-              className="border border-gray-300 p-2"
+              className="border p-2"
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="message" className="mb-2 text-gray-900 font-bold">
+            <label htmlFor="message" className="mb-2 text-white font-bold">
               Your Message
             </label>
             <textarea
@@ -119,12 +116,12 @@ export default function Contact() {
               value={message}
               onChange={handleMessageChange}
               required
-              className="border border-gray-300 p-2 h-40"
+              className="border p-2 h-40"
             />
           </div>
           <button
             type="submit"
-            className="bg-gray-900 text-white p-2 rounded hover:bg-gray-700"
+            className="bg-white text-gray-900 p-2 rounded hover:bg-blue-700"
           >
             Submit
           </button>

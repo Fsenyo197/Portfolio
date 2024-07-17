@@ -1,7 +1,5 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import tradingPulseImage from "@Images/trading-pulse.png";
-import portfolioImage from "@Images/portfolio.png";
 
 const Projects = () => {
   const projectList = {
@@ -10,30 +8,35 @@ const Projects = () => {
     groups: [
       {
         id: "work",
-        title: "Featured Fullstack Projects",
-        subtitle: "From imaginations to Reality ...",
+        title: "Fullstack Projects",
+        subtitle: "From ideas to reality...",
         items: [
+          {
+            id: "tusome",
+            url: "https://tusome-xi.vercel.app/",
+            title: "Tusome",
+            description:
+              "A cutting-edge educational tool that enables students to thrive in their academic pursuits by offering access to a vast collection of past exam questions. Connecting students with relevant study resources by providing a simple and user-friendly interface for better learning and exam preparation.",
+            stacks: ["React", "Laravel", "MUI", "MySQL"],
+            imageUrl: "/tusome.png",
+          },
           {
             id: "trading-pulse",
             url: "https://trading-pulse.vercel.app/",
-            imgSrc: tradingPulseImage,
-            imgAlt: "Screenshot of the Trading Pulse website",
             title: "Trading Pulse",
             description:
-              "A simple yet powerful tool, that empowers traders of all levels to make informed decisions by providing positive, negative, and neutral analyses of key economic factors. Our in-depth analysis helps you understand the potential impact on various markets, from forex and stocks to commodities and cryptocurrencies. By leveraging this knowledge, you can improve your win rate and navigate the complexities of financial markets with confidence.",
+              "A simple yet powerful tool, that empowers traders of all levels to make informed decisions by providing positive, negative, and neutral analyses of key economic factors. Our in-depth analysis helps you understand the potential impact on various markets, from forex and stocks to commodities and cryptocurrencies.",
             stacks: ["React", "TailwindCSS", "Django", "MySQL"],
-            borderColor: "#3b82f6", // Blue border for Trading Pulse
+            imageUrl: "/trading-pulse.png",
           },
           {
             id: "portfolio",
             url: "https://richard-senyo.netlify.app",
-            imgSrc: portfolioImage,
-            imgAlt: "Screenshot of the Portfolio website",
             title: "Portfolio",
             description:
               "My personal portfolio website. In addition with a serverless backend for transporting the messages from the contact form directly to my email.",
             stacks: ["React", "TailwindCSS", "Node.js", "ExpressJs"],
-            borderColor: "#10b981", // Green border for Portfolio
+            imageUrl: "/portfolio.png",
           },
         ],
       },
@@ -41,35 +44,64 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="container mx-auto p-4 sm:pt-4 sm:p-6 md:p-20 mt-20">
+    <div
+      id="projects"
+      className="container mx-auto p-4 sm:pt-4 sm:p-6 md:p-20 mt-20"
+    >
       {projectList.groups.map((group) => (
         <div key={group.id} className="mb-12">
-          <div className="text-gray-900 text-3xl font-bold mb-2">
+          <Typography
+            variant="h3"
+            component="h2"
+            className="text-gray-900 text-3xl font-bold mb-2"
+          >
             {group.title}
-          </div>
-          <div className="mb-8 text-sm italic">
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            className="mb-8 pb-8 text-gray-900 italic"
+          >
             {group.subtitle}
-          </div>
+          </Typography>
           <Grid container spacing={4}>
             {group.items.map((item) => (
-              <Grid item key={item.id}>
-                <div
-                  className="project-item p-4 text-gray-900 rounded-lg shadow-lg bg-white"
-                  style={{ border: `4px solid ${item.borderColor}` }}
+              <Grid item key={item.id} className="flex">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline w-full"
                 >
-                  <img src={item.imgSrc} alt={item.imgAlt} className="w-full h-40 object-cover rounded-t-lg" />
-                  <div className="project-content mt-4">
-                    <Typography variant="h5" component="h3" className="text-gray-900">
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      {item.stacks.join(", ")}
-                    </Typography>
-                    <Typography variant="body2" component="p" className="mt-2">
-                      {item.description}
-                    </Typography>
+                  <div
+                    className="project-item flex p-4 text-white rounded-lg shadow-lg bg-gray-900"
+                    style={{ borderLeft: `4px solid ${item.borderColor}` }}
+                  >
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-32 h-32 object-cover mr-4"
+                    />
+                    <div className="project-content flex flex-col justify-between">
+                      <Typography
+                        variant="h5"
+                        component="h3"
+                        className="text-white mb-2"
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        component="p"
+                        className="p-4 text-gray-300 italic text-sm"
+                      >
+                        {item.stacks.join(", ")}
+                      </Typography>
+                      <Typography variant="body2" component="p">
+                        {item.description}
+                      </Typography>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Grid>
             ))}
           </Grid>
