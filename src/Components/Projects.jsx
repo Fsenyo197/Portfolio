@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const Projects = () => {
   const projectList = {
@@ -43,6 +43,9 @@ const Projects = () => {
     ],
   };
 
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <div
       id="projects"
@@ -65,7 +68,7 @@ const Projects = () => {
           </Typography>
           <Grid container spacing={4}>
             {group.items.map((item) => (
-              <Grid item key={item.id} className="flex">
+              <Grid item key={item.id}>
                 <a
                   href={item.url}
                   target="_blank"
@@ -73,26 +76,27 @@ const Projects = () => {
                   className="no-underline w-full"
                 >
                   <div
-                    className="project-item flex p-4 text-white rounded-lg shadow-lg bg-gray-900"
-                    style={{ borderLeft: `4px solid ${item.borderColor}` }}
+                    className={`project-item flex flex-col ${
+                      isSmallScreen ? "text-center" : "text-left"
+                    } p-4 text-gray-200 rounded-lg shadow-lg bg-gray-900`}
                   >
                     <img
                       src={item.imageUrl}
                       alt={item.title}
-                      className="w-32 h-32 object-cover mr-4"
+                      className="w-full h-32  object-cover mb-4"
                     />
-                    <div className="project-content flex flex-col justify-between">
+                    <div className="project-content">
                       <Typography
                         variant="h5"
                         component="h3"
-                        className="text-white mb-2"
+                        className="text-gray-200 mb-2"
                       >
                         {item.title}
                       </Typography>
                       <Typography
                         variant="body2"
                         component="p"
-                        className="p-4 text-gray-300 italic text-sm"
+                        className="p-4 text-gray-400 italic text-sm"
                       >
                         {item.stacks.join(", ")}
                       </Typography>

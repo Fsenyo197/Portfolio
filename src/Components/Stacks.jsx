@@ -81,23 +81,25 @@ export default function Stacks() {
   return (
     <div className="min-h-screen flex items-center justify-center p-12 bg-gray-900 rounded-lg">
       <div className="w-full max-w-4xl">
-        <div className="text-white text-3xl font-bold mb-2">Pack of Stacks</div>
-        <div className="mb-8 pb-8 text-white italic">
+        <div className="text-gray-200 text-3xl font-bold mb-2">
+          Pack of Stacks
+        </div>
+        <div className="mb-8 pb-8 text-gray-200 italic">
           The pack that drives my coding reality!
         </div>
         <ul>
           <ul className="list-none mb-8">
-            <div className="text-white font-bold text-xl mb-2">
+            <div className="text-gray-200 font-bold text-xl mb-2">
               Programming Languages
             </div>
             {ProgrammingLanguages.map((language) => (
               <li key={language.name} className="flex items-center mb-2">
-                <span className="mr-2 text-white">✓</span>
+                <span className="mr-2 text-gray-200">✓</span>
                 <a
                   href={language.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-700 text-white"
+                  className="hover:text-blue-700 text-gray-200"
                 >
                   {language.name}
                 </a>
@@ -105,17 +107,17 @@ export default function Stacks() {
             ))}
           </ul>
           <ul className="list-none mb-8">
-            <div className="text-white font-bold text-xl mb-2">
+            <div className="text-gray-200 font-bold text-xl mb-2">
               Framework & Libraries
             </div>
             {frameworks.map((framework) => (
               <li key={framework.name} className="flex items-center mb-2">
-                <span className="mr-2 text-white">✓</span>
+                <span className="mr-2 text-gray-200">✓</span>
                 <a
                   href={framework.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-700 text-white"
+                  className="hover:text-blue-700 text-gray-200"
                 >
                   {framework.name}
                 </a>
@@ -123,15 +125,15 @@ export default function Stacks() {
             ))}
           </ul>
           <ul className="list-none mb-8">
-            <div className="text-white font-bold text-xl mb-2">DevOps</div>
+            <div className="text-gray-200 font-bold text-xl mb-2">DevOps</div>
             {devops.map((devop) => (
               <li key={devop.name} className="flex items-center mb-2">
-                <span className="mr-2 text-white">✓</span>
+                <span className="mr-2 text-gray-200">✓</span>
                 <a
                   href={devop.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-700 text-white"
+                  className="hover:text-blue-700 text-gray-200"
                 >
                   {devop.name}
                 </a>
@@ -139,17 +141,17 @@ export default function Stacks() {
             ))}
           </ul>
           <ul className="list-none mb-8">
-            <div className="text-white font-bold text-xl mb-2">
+            <div className="text-gray-200 font-bold text-xl mb-2">
               Software & Applications
             </div>
             {softwares.map((software) => (
               <li key={software.name} className="flex items-center mb-2">
-                <span className="mr-2 text-white">✓</span>
+                <span className="mr-2 text-gray-200">✓</span>
                 <a
                   href={software.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" hover:text-blue-700 text-white"
+                  className=" hover:text-blue-700 text-gray-200"
                 >
                   {software.name}
                 </a>

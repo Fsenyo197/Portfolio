@@ -63,13 +63,15 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 sm:pt-4 bg-gray-900 rounded-lg">
       <div className="w-full max-w-lg">
-        <div className="text-white text-3xl font-bold mb-2">Ready to vibe?</div>
-        <div className="text-lg text-white mb-8">
+        <div className="text-gray-200 text-3xl font-bold mb-2">
+          Ready to vibe?
+        </div>
+        <div className="text-lg text-gray-200 mb-8">
           Let's make some magic together!
         </div>
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="flex flex-col mb-4">
-            <label htmlFor="name" className="mb-2 text-white font-bold">
+            <label htmlFor="name" className="mb-2 text-gray-200 font-bold">
               Your Name
             </label>
             <input
@@ -82,7 +84,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="mb-2 text-white font-bold">
+            <label htmlFor="email" className="mb-2 text-gray-200 font-bold">
               Your Email
             </label>
             <input
@@ -95,7 +97,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="subject" className="mb-2 text-white font-bold">
+            <label htmlFor="subject" className="mb-2 text-gray-200 font-bold">
               Your Subject
             </label>
             <input
@@ -108,7 +110,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="message" className="mb-2 text-white font-bold">
+            <label htmlFor="message" className="mb-2 text-gray-200 font-bold">
               Your Message
             </label>
             <textarea
@@ -121,7 +123,7 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="bg-white text-gray-900 p-2 rounded hover:bg-blue-700"
+            className="bg-gray-200 text-gray-900 p-2 rounded hover:bg-blue-700"
           >
             Submit
           </button>

@@ -36,7 +36,7 @@ export default function Profile() {
   };
 
   return (
-    <aside className="bg-gray-900 text-white flex-col hidden md:flex w-64 border-l items-center">
+    <aside className="bg-gray-900 text-gray-200 flex-col hidden md:flex w-64 border-l items-center">
       <div>
         <img
           src={senyo}
@@ -46,7 +46,7 @@ export default function Profile() {
       </div>
       <div className="p-4">
         <div className="text-lg font-bold mb-1">Richard Senyo Gadasu</div>
-        <div className="text-gray-300">Fullstack Software Engineer</div>
+        <div className="text-gray-400">Fullstack Software Engineer</div>
       </div>
       <div className="mt-8 flex justify-between w-32">
         <LightTooltip title="GitHub" arrow placement="bottom">
@@ -101,7 +101,7 @@ export default function Profile() {
           </a>
         </LightTooltip>
       </div>
-      <div className="flex flex-wrap mt-8 font-medium text-sm p-2 text-gray-300">
+      <div className="flex flex-wrap mt-8 font-medium text-sm p-2 text-gray-200">
         <p>
           Curious and passionate Fullstack Software Engineer with a solid
           foundation in JavaScript, C, Python, PHP, HTML, and CSS. Thriving in
