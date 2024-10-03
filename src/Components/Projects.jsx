@@ -12,12 +12,21 @@ const Projects = () => {
         subtitle: "From ideas to reality...",
         items: [
           {
+            id: "propfirmnews",
+            url: "https://propfirmnews.live/",
+            title: "Prop Firm News",
+            description:
+              "A blogging platform dedicated to the trading prop firm industry. It covers key aspects such as pricing models, payout structures, and trading platforms, offering traders valuable insights. The platform also provides clarity on rules and guidelines that prop firms enforce, helping traders navigate the industry effectively.",
+            stacks: ["Django", "NextJS", "MUI", "PostgreSQL"],
+            imageUrl: "/propfirmnews.png",
+          },
+          {
             id: "tusome",
             url: "https://tusome-xi.vercel.app/",
             title: "Tusome",
             description:
               "A cutting-edge educational tool that enables students to thrive in their academic pursuits by offering access to a vast collection of past exam questions. Connecting students with relevant study resources by providing a simple and user-friendly interface for better learning and exam preparation.",
-            stacks: ["React", "Laravel", "MUI", "MySQL"],
+            stacks: ["React", "Laravel", "MUI", "PostgreSQL"],
             imageUrl: "/tusome.png",
           },
           {
